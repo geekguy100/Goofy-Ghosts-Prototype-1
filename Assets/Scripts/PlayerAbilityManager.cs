@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerAbilityManager : MonoBehaviour
 {
     private IAbility ability;
+    [SerializeField] private AbilityCooldownChannelSO abilityCooldownChannel;
 
     private void Awake()
     {
@@ -12,7 +12,14 @@ public class PlayerAbilityManager : MonoBehaviour
 
     public void OnAbilityActivate()
     {
-        print("Ability on!");
+        if (ability.IsCoolingDown())
+        {
+            return;
+        }
+
+        print("[PlayerAbilityManager] : ability on!");
+
+        abilityCooldownChannel.RaiseEvent(ability.GetCooldownTime());
         ability.Activate();
     }
 }

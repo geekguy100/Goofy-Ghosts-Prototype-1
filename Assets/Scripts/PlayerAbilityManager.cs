@@ -1,16 +1,48 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAbilityManager : MonoBehaviour
 {
+    /// <summary>
+    /// The player control script.
+    /// </summary>
+    private PlayerControls controls;
+
+    /// <summary>
+    /// The currently equipped ability.
+    /// </summary>
     private IAbility ability;
+
+    [Tooltip("Channel to broadcast ability cooldown to.")]
     [SerializeField] private AbilityCooldownChannelSO abilityCooldownChannel;
 
+    #region -- Subscribing and Unsubscribing to Input Events --
+    private void OnEnable()
+    {
+        controls.Player.AbilityActivate.performed += OnAbilityActivate;
+        controls.Player.AbilityActivate.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.AbilityActivate.Disable();
+    }
+    #endregion
+
+    /// <summary>
+    /// Initializing player controls and adding default ability.
+    /// </summary>
     private void Awake()
     {
+        controls = new PlayerControls();
         ability = gameObject.AddComponent<PhaseAbility>();
     } 
 
-    public void OnAbilityActivate()
+    /// <summary>
+    /// Activates the current ability.
+    /// </summary>
+    /// <param name="ctx">Input System callback context</param>
+    public void OnAbilityActivate(InputAction.CallbackContext ctx)
     {
         if (ability.IsCoolingDown())
         {

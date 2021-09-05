@@ -3,12 +3,12 @@
 // Author :            Kyle Grenier
 // Creation Date :     09/04/2021
 //
-// Brief Description : Adds a force to the bullet's rigidbody upon instantiation.
+// Brief Description : Abstract bullet clas. Adds a force to the bullet's rigidbody upon instantiation.
 *****************************************************************************/
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
     /// <summary>
     /// The bullet's Rigidbody2D component.
@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
 
     [Tooltip("The speed of the bullet upon instantiation.")]
     [SerializeField] private float bulletSpeed;
+
+    [Tooltip("Time till bullet is destoyed.")]
+    [SerializeField] private float destroyTime;
 
     /// <summary>
     /// Getting the Rigidbody2D component.
@@ -32,5 +35,8 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         rb.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
+        Destroy(gameObject, destroyTime);
     }
+
+    protected abstract void OnCollisionEnter2D(Collision2D collision);
 }

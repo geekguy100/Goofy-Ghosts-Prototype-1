@@ -39,6 +39,9 @@ public class PlayerWeaponManager : MonoBehaviour
         controls.Player.WeaponFire.performed += OnWeaponFire;
         controls.Player.WeaponFire.Enable();
 
+        controls.Player.WeaponReleaseFire.performed += OnWeaponFireRelease;
+        controls.Player.WeaponReleaseFire.Enable();
+
         controls.Player.WeaponRotate.performed += OnWeaponRotate;
         controls.Player.WeaponRotate.Enable();
     }
@@ -49,6 +52,7 @@ public class PlayerWeaponManager : MonoBehaviour
     private void OnDisable()
     {
         controls.Player.WeaponFire.Disable();
+        controls.Player.WeaponReleaseFire.Disable();
         controls.Player.WeaponRotate.Disable();
     }
     #endregion
@@ -74,6 +78,11 @@ public class PlayerWeaponManager : MonoBehaviour
     private void OnWeaponFire(InputAction.CallbackContext ctx)
     {
         weapon.Fire();
+    }
+
+    private void OnWeaponFireRelease(InputAction.CallbackContext ctx)
+    {
+        weapon.ReleaseFire();
     }
 
     /// <summary>

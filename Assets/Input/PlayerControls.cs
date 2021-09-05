@@ -49,6 +49,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""WeaponReleaseFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0641a7c-eeed-491d-9874-5d702d43b6e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -139,6 +147,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""WeaponFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a49c0c73-ba6c-4c7c-9351-5510c58a2d60"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponReleaseFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -151,6 +170,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_AbilityActivate = m_Player.FindAction("AbilityActivate", throwIfNotFound: true);
         m_Player_WeaponRotate = m_Player.FindAction("WeaponRotate", throwIfNotFound: true);
         m_Player_WeaponFire = m_Player.FindAction("WeaponFire", throwIfNotFound: true);
+        m_Player_WeaponReleaseFire = m_Player.FindAction("WeaponReleaseFire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,6 +224,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_AbilityActivate;
     private readonly InputAction m_Player_WeaponRotate;
     private readonly InputAction m_Player_WeaponFire;
+    private readonly InputAction m_Player_WeaponReleaseFire;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -212,6 +233,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @AbilityActivate => m_Wrapper.m_Player_AbilityActivate;
         public InputAction @WeaponRotate => m_Wrapper.m_Player_WeaponRotate;
         public InputAction @WeaponFire => m_Wrapper.m_Player_WeaponFire;
+        public InputAction @WeaponReleaseFire => m_Wrapper.m_Player_WeaponReleaseFire;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -233,6 +255,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @WeaponFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
                 @WeaponFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
                 @WeaponFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
+                @WeaponReleaseFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponReleaseFire;
+                @WeaponReleaseFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponReleaseFire;
+                @WeaponReleaseFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponReleaseFire;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -249,6 +274,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @WeaponFire.started += instance.OnWeaponFire;
                 @WeaponFire.performed += instance.OnWeaponFire;
                 @WeaponFire.canceled += instance.OnWeaponFire;
+                @WeaponReleaseFire.started += instance.OnWeaponReleaseFire;
+                @WeaponReleaseFire.performed += instance.OnWeaponReleaseFire;
+                @WeaponReleaseFire.canceled += instance.OnWeaponReleaseFire;
             }
         }
     }
@@ -259,5 +287,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnAbilityActivate(InputAction.CallbackContext context);
         void OnWeaponRotate(InputAction.CallbackContext context);
         void OnWeaponFire(InputAction.CallbackContext context);
+        void OnWeaponReleaseFire(InputAction.CallbackContext context);
     }
 }

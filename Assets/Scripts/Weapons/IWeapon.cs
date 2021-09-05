@@ -29,6 +29,11 @@ public abstract class IWeapon : MonoBehaviour
     private bool canFire = true;
 
     /// <summary>
+    /// True if the player is in the process of firing (holding down the Fire button).
+    /// </summary>
+    private bool firing = false;
+
+    /// <summary>
     /// True if the player is in the process of reloading the weapon.
     /// </summary>
     private bool reloading = false;
@@ -61,21 +66,45 @@ public abstract class IWeapon : MonoBehaviour
         if (currentClipSize == 0)
         {
             OnClipEmpty?.Invoke();
+            return;
         }
-        else if (canFire)
-        {
-            OnWeaponFire?.Invoke();
 
-            // Decrease the weapon's clip size if
-            // the player does not have infinite ammo.
-            if (currentClipSize != -1)
+        if (!firing)
+        {
+            firing = true;
+            StartCoroutine(ShootBullet());
+        }
+    }
+
+    public void ReleaseFire()
+    {
+        firing = false;
+    }
+
+    private IEnumerator ShootBullet()
+    {
+        do
+        {
+            // Only shoot a bullet if the player can fire.
+            if (canFire)
             {
-                currentClipSize -= 1;
+                OnWeaponFire?.Invoke();
+
+                // Decrease the weapon's clip size if
+                // the player does not have infinite ammo.
+                if (currentClipSize != -1)
+                {
+                    currentClipSize -= 1;
+                }
+
+                Instantiate(weaponData.BulletPrefab, bulletSpawnPos.position, transform.rotation);
+                StartCoroutine(Cooldown());
             }
 
-            Instantiate(weaponData.BulletPrefab, bulletSpawnPos.position, transform.rotation);
-            StartCoroutine(Cooldown());
+            yield return null;
         }
+        // Continue shooting if the weapon is an automatic weapon.
+        while (weaponData.weaponType == WeaponData.WeaponType.AUTOMATIC && firing);
     }
 
     /// <summary>
@@ -120,4 +149,9 @@ public abstract class IWeapon : MonoBehaviour
         reloading = false;
     }
     #endregion
+
+    /// <summary>
+    /// Returns the weapon's WeaponType.
+    /// </summary>
+    /// <returns>The weapon's WeaponType.</returns>
 }

@@ -1,43 +1,53 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
+    private PlayerControls controls;
+    private InputAction movementControls;
+
     // Components
     private Rigidbody2D rb;
 
     // Movement fields
-    /// <summary>
-    /// The vector that stores the player's movement input.
-    /// </summary>
-    private Vector2 movementVector;
-
     [Tooltip("The speed the player moves at.")]
     [SerializeField] private float movementSpeed = 1;
 
-
-    private void Awake()
+    #region -- Subscribing / Unsubscribing to Input Events --
+    private void OnEnable()
     {
-        rb = GetComponent<Rigidbody2D>();
+        movementControls = controls.Player.Move;
+        movementControls.Enable();
     }
 
-    public void OnMove(InputValue inputValue)
+    private void OnDisable()
     {
-        movementVector = inputValue.Get<Vector2>();
+        movementControls.Disable();
+        movementControls = null;
+    }
+    #endregion
+
+    /// <summary>
+    /// Initializing controls and getting components.
+    /// </summary>
+    private void Awake()
+    {
+        controls = new PlayerControls();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     /// <summary>
     /// Moves the player game object.
     /// </summary>
-    private void MovePlayer()
+    /// <param name="movementVector">The vector that stores the player's movement input.</param>
+    private void MovePlayer(Vector2 movementVector)
     {
         rb.MovePosition(rb.position + movementVector * Time.fixedDeltaTime * movementSpeed);
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        MovePlayer(movementControls.ReadValue<Vector2>());
     }
 }

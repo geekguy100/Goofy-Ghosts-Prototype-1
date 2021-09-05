@@ -20,6 +20,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "WeaponRotate",
+                    "type": "Value",
+                    "id": "4a8d69ec-6a5c-4c6d-a015-ae6b32eb49ee",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "WeaponFire",
+                    "type": "Button",
+                    "id": "f70cd70d-0d18-4041-9d36-47949d9c7ba3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -37,7 +53,7 @@
                 {
                     "name": "up",
                     "id": "a2f75033-0254-4860-b164-d8e3a0c26128",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +64,7 @@
                 {
                     "name": "down",
                     "id": "9f46cf7b-5094-40f4-b5fb-92d220f33c7c",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -59,7 +75,7 @@
                 {
                     "name": "left",
                     "id": "c352b00d-b975-4591-91d2-6c5f2348cee7",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,7 +86,7 @@
                 {
                     "name": "right",
                     "id": "ab801a1c-f091-42c8-8116-df11eb360759",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -86,6 +102,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "AbilityActivate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ba0c78d-53eb-4546-893b-c857ebde1c85",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WeaponRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82648324-cd53-4af3-a43f-6f0eda73d56e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WeaponFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

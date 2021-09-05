@@ -390,7 +390,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.45
+      scalar: 0.55
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1096,13 +1096,13 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.17287232
         - serializedVersion: 3
-          time: 1
+          time: 0.82712775
           value: 0
-          inSlope: 0.07935833
-          outSlope: 0.07935833
+          inSlope: -1.1407753
+          outSlope: -1.1407753
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.1223405
+          inWeight: 0.15434101
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1418,14 +1418,14 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 60524
+        ctime1: 53585
         ctime2: 59174
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 33731
+        atime0: 41249
         atime1: 65535
         atime2: 65535
         atime3: 0
@@ -1467,8 +1467,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1586,7 +1586,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 68c5c50e2777f4e23b7f6c53f598ed82, type: 3}
+    - sprite: {fileID: 21300000, guid: c37941fe59f8f49dd85ee7005bed00ea, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4886,7 +4886,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
-  m_SortMode: 0
+  m_SortMode: 3
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0

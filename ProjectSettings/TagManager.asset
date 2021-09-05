@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Phaseable Wall
-  - 
+  - Background
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3934141645
+    locked: 0
   - name: Player
     uniqueID: 3442256393
     locked: 0

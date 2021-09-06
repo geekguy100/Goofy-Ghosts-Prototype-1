@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name :         AbilityUICooldown.cs
+// Author :            Kyle Grenier
+// Creation Date :     09/04/2021
+//
+// Brief Description : Responsible for updating UI to an indicate ability's cooldown time.
+*****************************************************************************/
 using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
@@ -6,12 +13,12 @@ using System.Collections;
 public class AbilityUICooldown : MonoBehaviour
 {
     private Slider slider;
-    [SerializeField] private AbilityCooldownChannelSO abilityCooldownChannel;
+    [SerializeField] private AbilityUsedChannelSO abilityUsedChannel;
 
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        abilityCooldownChannel.OnCooldownChange += (float value) => { StartCoroutine(ChangeSlider(value)); };
+        abilityUsedChannel.OnAbilityUsed += (float value) => { StartCoroutine(ChangeSlider(value)); };
     }
 
     private IEnumerator ChangeSlider(float value)

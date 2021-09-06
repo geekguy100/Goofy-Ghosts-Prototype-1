@@ -12,8 +12,18 @@ public abstract class IAbility : MonoBehaviour
 {
     // MEMBER VARIABLES
 
-    [Tooltip("The ability cooldown channel to broadcast to.")]
-    [SerializeField] private AbilityCooldownChannelSO abilityCooldownChannel;
+    [Header("Channels")]
+
+    [Tooltip("The ability used channel to broadcast to.")]
+    [SerializeField] private AbilityUsedChannelSO abilityUsedChannel;
+    [Tooltip("The channel that accepts and broadcasts requests to play SFX.")]
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+
+    [Header("SFX")]
+    [Tooltip("AudioClipSO played when the abiltiy is activated.")]
+    [SerializeField] private AudioClipSO abilityUsedClip;
+    [Tooltip("AudioClipSO played when the ability's cooldown is over.")]
+    [SerializeField] private AudioClipSO abilityOverClip;
 
     /// <summary>
     /// True if the ability is cooling down.
@@ -37,6 +47,8 @@ public abstract class IAbility : MonoBehaviour
     /// </summary>
     public virtual void Activate()
     {
+        abilityUsedChannel.RaiseEvent(GetCooldownTime());
+        sfxChannel.RaiseEvent(abilityUsedClip);
         StartCoroutine(Cooldown());
     }
 
@@ -52,10 +64,10 @@ public abstract class IAbility : MonoBehaviour
     /// </summary>
     private IEnumerator Cooldown()
     {
-        abilityCooldownChannel.RaiseEvent(GetCooldownTime());
         coolingDown = true;
         yield return new WaitForSeconds(GetCooldownTime());
         coolingDown = false;
+        sfxChannel.RaiseEvent(abilityOverClip);
         OnCooldownComplete();
     }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f3c4aad7eea943902b4cd4df90964, type: 3}
+  m_Name: PhaseAbilityOver
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 9fcfa7f73f650f94790db8c3f105d064, type: 3}
+  mixerGroup: {fileID: 24300002, guid: e727d65b9a575e146b6bd26ffbf0e564, type: 2}
+  pitch: 1
+  volume: 0.6

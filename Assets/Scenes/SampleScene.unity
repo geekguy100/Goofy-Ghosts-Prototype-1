@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b555552556d17a4b98f45172a982b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityCooldownChannel: {fileID: 11400000, guid: be3b46d55d650984087a25e47af65250, type: 2}
+  abilityUsedChannel: {fileID: 11400000, guid: be3b46d55d650984087a25e47af65250, type: 2}
 --- !u!114 &242884965
 MonoBehaviour:
   m_ObjectHideFlags: 0

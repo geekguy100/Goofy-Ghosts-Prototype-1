@@ -7,7 +7,6 @@
 *****************************************************************************/
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class PhaseAbility : IAbility
 {
     /// <summary>
@@ -18,7 +17,7 @@ public class PhaseAbility : IAbility
     protected override void Awake()
     {
         base.Awake();
-        rend = GetComponent<SpriteRenderer>();
+        rend = GetComponentInChildren<SpriteRenderer>();
     }
 
     /// <summary>

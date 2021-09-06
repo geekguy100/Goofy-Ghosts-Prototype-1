@@ -18,6 +18,15 @@ public abstract class IWeapon : MonoBehaviour
     [Tooltip("The Transform indicating the bullet's spawn position.")]
     [SerializeField] protected Transform bulletSpawnPos;
 
+
+    [Header("Audio Fields")]
+    [Tooltip("The channel SFX will be played on.")]
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+
+    [Tooltip("The audio clip to play when the weapon is fired.")]
+    [SerializeField] private AudioClipSO shootSFX;
+
+
     /// <summary>
     /// The amount of bullets currently in the clip.
     /// </summary>
@@ -94,9 +103,10 @@ public abstract class IWeapon : MonoBehaviour
                 // the player does not have infinite ammo.
                 if (currentClipSize != -1)
                 {
-                    currentClipSize -= 1;
+                    --currentClipSize;
                 }
 
+                sfxChannel.RaiseEvent(shootSFX);
                 Instantiate(weaponData.BulletPrefab, bulletSpawnPos.position, transform.rotation);
                 StartCoroutine(Cooldown());
             }

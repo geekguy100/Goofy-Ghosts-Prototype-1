@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name :         PlayerMotor.cs
+// Author :            Kyle Grenier
+// Creation Date :     09/03/2021
+//
+// Brief Description : Responsible for accepting input and moving the player's game object.
+*****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
 

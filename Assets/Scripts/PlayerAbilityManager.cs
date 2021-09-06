@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name :         PlayerAbilityManager.cs
+// Author :            Kyle Grenier
+// Creation Date :     09/04/2021
+//
+// Brief Description : Responsible for managing the player's abilities.
+*****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
 

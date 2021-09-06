@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 48b22fadf037f447cb75ddd88eb4de28
+guid: 7922393fa63b34f949f90fd9ba1961a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3765702155137962334
-    second: Ghost_Idle_0
+      213: -2116844052030564953
+    second: Ghost_Death_0
   - first:
-      213: 4298949797229914293
-    second: Ghost_Idle_1
+      213: -1628455709569763932
+    second: Ghost_Death_1
   - first:
-      213: 8219114447679377890
-    second: Ghost_Idle_2
+      213: 2824630610154094209
+    second: Ghost_Death_2
+  - first:
+      213: 8673281631495633444
+    second: Ghost_Death_3
+  - first:
+      213: 1473837293062363226
+    second: Ghost_Death_4
+  - first:
+      213: 2273706467632552420
+    second: Ghost_Death_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost_Idle_0
+      name: Ghost_Death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e51dbe69826724430800000000000000
-      internalID: 3765702155137962334
+      spriteID: 7a5d1d9dc857f92e0800000000000000
+      internalID: -2116844052030564953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1
+      name: Ghost_Death_1
       rect:
         serializedVersion: 2
         x: 32
@@ -135,14 +144,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b860235010f8ab30800000000000000
-      internalID: 4298949797229914293
+      spriteID: 4a533aaf8209669e0800000000000000
+      internalID: -1628455709569763932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_2
+      name: Ghost_Death_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18efdeb039a133720800000000000000
+      internalID: 2824630610154094209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Death_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ab73ad0bfad5870800000000000000
+      internalID: 8673281631495633444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Death_4
       rect:
         serializedVersion: 2
         x: 0
@@ -156,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e1d53e1b09201270800000000000000
-      internalID: 8219114447679377890
+      spriteID: a5894b5953f147410800000000000000
+      internalID: 1473837293062363226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Death_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e91fb65cf3dd8f10800000000000000
+      internalID: 2273706467632552420
       vertices: []
       indices: 
       edges: []

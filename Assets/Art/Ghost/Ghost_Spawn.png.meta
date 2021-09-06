@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 48b22fadf037f447cb75ddd88eb4de28
+guid: 5f4119afca8f84e5bb79a0925f0e2ac8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3765702155137962334
-    second: Ghost_Idle_0
+      213: -4406202631438186194
+    second: Ghost_Spawn_0
   - first:
-      213: 4298949797229914293
-    second: Ghost_Idle_1
+      213: 8472005135800932055
+    second: Ghost_Spawn_1
   - first:
-      213: 8219114447679377890
-    second: Ghost_Idle_2
+      213: 316990084308281919
+    second: Ghost_Spawn_2
+  - first:
+      213: 7319337016449981690
+    second: Ghost_Spawn_3
+  - first:
+      213: -6172081327439737563
+    second: Ghost_Spawn_4
+  - first:
+      213: -2506961637745993173
+    second: Ghost_Spawn_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost_Idle_0
+      name: Ghost_Spawn_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e51dbe69826724430800000000000000
-      internalID: 3765702155137962334
+      spriteID: e294cb04d060ad2c0800000000000000
+      internalID: -4406202631438186194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1
+      name: Ghost_Spawn_1
       rect:
         serializedVersion: 2
         x: 32
@@ -135,14 +144,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b860235010f8ab30800000000000000
-      internalID: 4298949797229914293
+      spriteID: 7d613bec8cb929570800000000000000
+      internalID: 8472005135800932055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_2
+      name: Ghost_Spawn_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a248c5dcc266400800000000000000
+      internalID: 316990084308281919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Spawn_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc5ed8ac32839560800000000000000
+      internalID: 7319337016449981690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Spawn_4
       rect:
         serializedVersion: 2
         x: 0
@@ -156,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e1d53e1b09201270800000000000000
-      internalID: 8219114447679377890
+      spriteID: 52d0229dbbc585aa0800000000000000
+      internalID: -6172081327439737563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost_Spawn_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a5e944cab753dd0800000000000000
+      internalID: -2506961637745993173
       vertices: []
       indices: 
       edges: []

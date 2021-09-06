@@ -20,9 +20,6 @@ public class PlayerAbilityManager : MonoBehaviour
     /// </summary>
     private IAbility ability;
 
-    [Tooltip("Channel to broadcast ability cooldown to.")]
-    [SerializeField] private AbilityCooldownChannelSO abilityCooldownChannel;
-
     #region -- Subscribing and Unsubscribing to Input Events --
     private void OnEnable()
     {
@@ -57,8 +54,6 @@ public class PlayerAbilityManager : MonoBehaviour
         }
 
         print("[PlayerAbilityManager] : ability on!");
-
-        abilityCooldownChannel.RaiseEvent(ability.GetCooldownTime());
         ability.Activate();
     }
 }

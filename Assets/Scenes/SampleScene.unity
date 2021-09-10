@@ -969,10 +969,6 @@ PrefabInstance:
       value: Key Guard
       objectReference: {fileID: 0}
     - target: {fileID: 6068168044208759463, guid: 3099d635711764fa3895deb33281e06f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7127083046175724644, guid: 01996fa6e6d1c244897b31d3cff69dca, type: 3}
-    - target: {fileID: 6068168044208759463, guid: 3099d635711764fa3895deb33281e06f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}

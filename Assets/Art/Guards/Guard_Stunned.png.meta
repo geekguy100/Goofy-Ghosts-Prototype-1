@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 01996fa6e6d1c244897b31d3cff69dca
+guid: 477509d67386e40b0bd10a82d00c1313
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7127083046175724644
-    second: KeyGuard_Idle_New_0
+      213: 4414407249660847776
+    second: Guard_Stunned_0
   - first:
-      213: 9074756931319762299
-    second: KeyGuard_Idle_New_1
+      213: -3323503652316637400
+    second: Guard_Stunned_1
   - first:
-      213: 6962280391455839051
-    second: KeyGuard_Idle_New_2
+      213: 2682910975533947083
+    second: Guard_Stunned_2
+  - first:
+      213: -9126332388248909753
+    second: Guard_Stunned_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +60,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -100,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KeyGuard_Idle_New_0
+      name: Guard_Stunned_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bacfbfab3871d90800000000000000
-      internalID: -7127083046175724644
+      spriteID: 0a6a1f94100234d30800000000000000
+      internalID: 4414407249660847776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KeyGuard_Idle_New_1
+      name: Guard_Stunned_1
       rect:
         serializedVersion: 2
         x: 32
@@ -135,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7d0452595300fd70800000000000000
-      internalID: 9074756931319762299
+      spriteID: 82714f1790b80e1d0800000000000000
+      internalID: -3323503652316637400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KeyGuard_Idle_New_2
+      name: Guard_Stunned_2
       rect:
         serializedVersion: 2
         x: 64
@@ -156,8 +159,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b439467d02dfe9060800000000000000
-      internalID: 6962280391455839051
+      spriteID: bc892bc415d9b3520800000000000000
+      internalID: 2682910975533947083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard_Stunned_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7480848db01c85180800000000000000
+      internalID: -9126332388248909753
       vertices: []
       indices: 
       edges: []

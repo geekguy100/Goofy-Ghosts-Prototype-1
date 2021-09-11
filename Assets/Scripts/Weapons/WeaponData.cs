@@ -77,12 +77,59 @@ public class WeaponData : ScriptableObject
     [Tooltip("The weapon's type (Semi-Auto or Automatic)")]
     public WeaponType weaponType;
 
+    [Header("SFX Channel")]
+
+    [Tooltip("The channel SFX will be broadcast to.")]
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+    /// <summary>
+    /// The channel SFX will be broadcast to.
+    /// </summary>
+    public AudioClipChannelSO SFXChannel
+    {
+        get
+        {
+            return sfxChannel;
+        }
+    }
+
     [Header("Audio Clips")]
 
     [Tooltip("Audio clip to play when the weapon is fired.")]
-    [SerializeField] private AudioClip weaponFireClip;
+    [SerializeField] private AudioClipSO weaponFireClip;
+    /// <summary>
+    /// Audio clip to play when the weapon is fired.
+    /// </summary>
+    public AudioClipSO WeaponFireClip
+    {
+        get
+        {
+            return weaponFireClip;
+        }
+    }
+
     [Tooltip("Audio clip to play when the weapon's magazine is empty.")]
-    [SerializeField] private AudioClip weaponEmptyClip;
+    [SerializeField] private AudioClipSO weaponEmptyClip;
+    /// <summary>
+    /// Audio clip to play when the weapon is fired.
+    /// </summary>
+    public AudioClipSO WeaponEmptyClip
+    {
+        get
+        {
+            return weaponEmptyClip;
+        }
+    }
+
     [Tooltip("Audio clip to play when the weapon is reloaded.")]
-    [SerializeField] private AudioClip weaponReloadClip;
+    [SerializeField] private AudioClipSO weaponReloadClip;
+    /// <summary>
+    /// Audio clip to play when the weapon is reloaded.
+    /// </summary>
+    public AudioClipSO WeaponReloadClip
+    {
+        get
+        {
+            return weaponReloadClip;
+        }
+    }
 }

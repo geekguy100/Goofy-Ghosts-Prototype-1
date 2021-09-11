@@ -20,6 +20,9 @@ public class PlayerWeaponManager : MonoBehaviour
     /// </summary>
     private IWeapon weapon;
 
+    [Tooltip("The channel that accepts subscribers to the game paused event.")]
+    [SerializeField] private BoolChannelSO gamePausedChannel;
+
 
     /// <summary>
     /// Gets the IWeapon component.
@@ -30,7 +33,7 @@ public class PlayerWeaponManager : MonoBehaviour
         weapon = weaponParent.GetComponentInChildren<IWeapon>();
     }
 
-    #region -- Subscribing / Unsubscribing to Input events --
+    #region -- Subscribing / Unsubscribing to Events --
     /// <summary>
     /// Subscribe to all of the input events.
     /// </summary>
@@ -42,8 +45,10 @@ public class PlayerWeaponManager : MonoBehaviour
         controls.Player.WeaponReleaseFire.performed += OnWeaponFireRelease;
         controls.Player.WeaponReleaseFire.Enable();
 
-        controls.Player.WeaponRotate.performed += OnWeaponRotate;
-        controls.Player.WeaponRotate.Enable();
+        controls.Player.Rotate.performed += OnRotate;
+        controls.Player.Rotate.Enable();
+
+        gamePausedChannel.OnEventRaised += ToggleInput;
     }
 
     /// <summary>
@@ -53,7 +58,9 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         controls.Player.WeaponFire.Disable();
         controls.Player.WeaponReleaseFire.Disable();
-        controls.Player.WeaponRotate.Disable();
+        controls.Player.Rotate.Disable();
+
+        gamePausedChannel.OnEventRaised -= ToggleInput;
     }
     #endregion
 
@@ -61,7 +68,7 @@ public class PlayerWeaponManager : MonoBehaviour
     /// Rotates the weapon according to the cursor's position.
     /// </summary>
     /// <param name="value">The mouse cursor's position.</param>
-    private void OnWeaponRotate(InputAction.CallbackContext ctx)
+    private void OnRotate(InputAction.CallbackContext ctx)
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
         mousePos.z = 0;
@@ -75,11 +82,16 @@ public class PlayerWeaponManager : MonoBehaviour
     /// <summary>
     /// Handles firing the weapon.
     /// </summary>
+    /// <param name="ctx">The input system's callback context.</param>
     private void OnWeaponFire(InputAction.CallbackContext ctx)
     {
         weapon.Fire();
     }
 
+    /// <summary>
+    /// Invoked when the player releases the weapon fire.
+    /// </summary>
+    /// <param name="ctx">The input system's callback context.</param>
     private void OnWeaponFireRelease(InputAction.CallbackContext ctx)
     {
         weapon.ReleaseFire();
@@ -91,5 +103,23 @@ public class PlayerWeaponManager : MonoBehaviour
     private void OnWeaponReload(InputAction.CallbackContext val)
     {
         weapon.Reload();
+    }
+
+    /// <summary>
+    /// Toggles player input.
+    /// </summary>
+    /// <param name="paused">True if the game is paused and input should be disabled.</param>
+    private void ToggleInput(bool paused)
+    {
+        if (paused)
+        {
+            controls.Player.WeaponFire.Disable();
+            controls.Player.WeaponReleaseFire.Disable();
+        }
+        else
+        {
+            controls.Player.WeaponFire.Enable();
+            controls.Player.WeaponReleaseFire.Enable();
+        }
     }
 }

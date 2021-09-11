@@ -1,24 +1,38 @@
+/*****************************************************************************
+// File Name :         PlayerAbilityManager.cs
+// Author :            Kyle Grenier
+// Creation Date :     09/04/2021
+//
+// Brief Description : Responsible for managing the player's abilities.
+*****************************************************************************/
 using UnityEngine;
-using System.Collections;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class PhaseAbility : MonoBehaviour, IAbility
+public class PhaseAbility : IAbility
 {
+    /// <summary>
+    /// The SpriteRenderer component attached to this game object.
+    /// </summary>
     private SpriteRenderer rend;
-    private bool coolingDown = false;
 
-    private void Awake()
+    protected override void Awake()
     {
-        rend = GetComponent<SpriteRenderer>();
+        base.Awake();
+        rend = GetComponentInChildren<SpriteRenderer>();
     }
 
-    public void Activate()
+    /// <summary>
+    /// Enables the phase ability.
+    /// </summary>
+    public override void Activate()
     {
+        base.Activate();
         PhaseOn();
-        StartCoroutine(Cooldown());
     }
 
     #region -- Ability Functionality --
+    /// <summary>
+    /// Enables the player to walk through phaseable walls.
+    /// </summary>
     private void PhaseOn()
     {
         Color c = rend.color;
@@ -28,6 +42,9 @@ public class PhaseAbility : MonoBehaviour, IAbility
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), true);
     }
 
+    /// <summary>
+    /// Disables the player's ability to walk through phasable walls.
+    /// </summary>
     private void PhaseOff()
     {
         Color c = rend.color;
@@ -39,22 +56,20 @@ public class PhaseAbility : MonoBehaviour, IAbility
     #endregion
 
     #region -- Cooldown Functionality --
-    private IEnumerator Cooldown()
-    {
-        coolingDown = true;
-        yield return new WaitForSeconds(GetCooldownTime());
-        coolingDown = false;
-        PhaseOff();
-    }
-
-    public float GetCooldownTime()
+    /// <summary>
+    /// Returns the time until the ability is no longer usable.
+    /// </summary>
+    public override float GetCooldownTime()
     {
         return 3f;
     }
 
-    public bool IsCoolingDown()
+    /// <summary>
+    /// Turns the Phase ability off once the cooldown timer runs out.
+    /// </summary>
+    protected override void OnCooldownComplete()
     {
-        return coolingDown;
+        PhaseOff();
     }
     #endregion
 }

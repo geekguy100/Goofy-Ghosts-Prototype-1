@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Player
   - Phaseable Wall
   - Background
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -47,12 +48,12 @@ TagManager:
   - name: Player
     uniqueID: 3442256393
     locked: 0
+  - name: Environment
+    uniqueID: 1310071747
+    locked: 0
   - name: Bullet
     uniqueID: 415526853
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Environment
-    uniqueID: 1310071747
     locked: 0

@@ -13,10 +13,10 @@ public abstract class Bullet : MonoBehaviour
     /// <summary>
     /// The bullet's Rigidbody2D component.
     /// </summary>
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     [Tooltip("The speed of the bullet upon instantiation.")]
-    [SerializeField] private float bulletSpeed;
+    [SerializeField] protected float bulletSpeed;
 
     [Tooltip("Time till bullet is destoyed.")]
     [SerializeField] private float destroyTime;

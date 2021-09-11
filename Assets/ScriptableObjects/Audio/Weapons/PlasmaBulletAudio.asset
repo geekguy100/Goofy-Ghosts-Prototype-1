@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f3c4aad7eea943902b4cd4df90964, type: 3}
+  m_Name: PlasmaBulletAudio
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: b12f3c088c29e2e43a0212bcb6db0e4a, type: 3}
+  mixerGroup: {fileID: -4056919572911987630, guid: ba6b396dc82256e47b40d93e9b527306, type: 2}
+  pitch: 1
+  volume: 0.25

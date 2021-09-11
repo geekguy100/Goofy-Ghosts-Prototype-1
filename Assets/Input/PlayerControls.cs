@@ -35,7 +35,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""WeaponRotate"",
+                    ""name"": ""Rotate"",
                     ""type"": ""Value"",
                     ""id"": ""4a8d69ec-6a5c-4c6d-a015-ae6b32eb49ee"",
                     ""expectedControlType"": ""Vector2"",
@@ -133,7 +133,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WeaponRotate"",
+                    ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -168,7 +168,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_AbilityActivate = m_Player.FindAction("AbilityActivate", throwIfNotFound: true);
-        m_Player_WeaponRotate = m_Player.FindAction("WeaponRotate", throwIfNotFound: true);
+        m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_WeaponFire = m_Player.FindAction("WeaponFire", throwIfNotFound: true);
         m_Player_WeaponReleaseFire = m_Player.FindAction("WeaponReleaseFire", throwIfNotFound: true);
     }
@@ -222,7 +222,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_AbilityActivate;
-    private readonly InputAction m_Player_WeaponRotate;
+    private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_WeaponFire;
     private readonly InputAction m_Player_WeaponReleaseFire;
     public struct PlayerActions
@@ -231,7 +231,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @AbilityActivate => m_Wrapper.m_Player_AbilityActivate;
-        public InputAction @WeaponRotate => m_Wrapper.m_Player_WeaponRotate;
+        public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @WeaponFire => m_Wrapper.m_Player_WeaponFire;
         public InputAction @WeaponReleaseFire => m_Wrapper.m_Player_WeaponReleaseFire;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -249,9 +249,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AbilityActivate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityActivate;
                 @AbilityActivate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityActivate;
                 @AbilityActivate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityActivate;
-                @WeaponRotate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponRotate;
-                @WeaponRotate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponRotate;
-                @WeaponRotate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponRotate;
+                @Rotate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
+                @Rotate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
+                @Rotate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
                 @WeaponFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
                 @WeaponFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
                 @WeaponFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponFire;
@@ -268,9 +268,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AbilityActivate.started += instance.OnAbilityActivate;
                 @AbilityActivate.performed += instance.OnAbilityActivate;
                 @AbilityActivate.canceled += instance.OnAbilityActivate;
-                @WeaponRotate.started += instance.OnWeaponRotate;
-                @WeaponRotate.performed += instance.OnWeaponRotate;
-                @WeaponRotate.canceled += instance.OnWeaponRotate;
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
                 @WeaponFire.started += instance.OnWeaponFire;
                 @WeaponFire.performed += instance.OnWeaponFire;
                 @WeaponFire.canceled += instance.OnWeaponFire;
@@ -285,7 +285,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAbilityActivate(InputAction.CallbackContext context);
-        void OnWeaponRotate(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
         void OnWeaponFire(InputAction.CallbackContext context);
         void OnWeaponReleaseFire(InputAction.CallbackContext context);
     }

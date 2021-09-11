@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "WeaponRotate",
+                    "name": "Rotate",
                     "type": "Value",
                     "id": "4a8d69ec-6a5c-4c6d-a015-ae6b32eb49ee",
                     "expectedControlType": "Vector2",
@@ -120,7 +120,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WeaponRotate",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

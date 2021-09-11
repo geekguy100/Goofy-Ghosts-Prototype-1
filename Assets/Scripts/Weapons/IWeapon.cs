@@ -18,6 +18,7 @@ public abstract class IWeapon : MonoBehaviour
     [Tooltip("The Transform indicating the bullet's spawn position.")]
     [SerializeField] protected Transform bulletSpawnPos;
 
+
     /// <summary>
     /// The amount of bullets currently in the clip.
     /// </summary>
@@ -38,21 +39,7 @@ public abstract class IWeapon : MonoBehaviour
     /// </summary>
     private bool reloading = false;
 
-    // Actions
-    /// <summary>
-    /// Invoked when the weapon is fired.
-    /// </summary>
-    public Action OnWeaponFire;
-    /// <summary>
-    /// Invoked when the weapon's reload sequence is started.
-    /// </summary>
-    public Action OnWeaponReload;
-    /// <summary>
-    /// Invoked when the weapon is fired and the magazine is empty.
-    /// </summary>
-    public Action OnClipEmpty;
-
-    private void Awake()
+    protected virtual void Awake()
     {
         currentClipSize = weaponData.ClipSize;
     }
@@ -65,7 +52,7 @@ public abstract class IWeapon : MonoBehaviour
     {
         if (currentClipSize == 0)
         {
-            OnClipEmpty?.Invoke();
+            OnClipEmpty();
             return;
         }
 
@@ -88,15 +75,16 @@ public abstract class IWeapon : MonoBehaviour
             // Only shoot a bullet if the player can fire.
             if (canFire)
             {
-                OnWeaponFire?.Invoke();
+                OnWeaponFire();
 
                 // Decrease the weapon's clip size if
                 // the player does not have infinite ammo.
                 if (currentClipSize != -1)
                 {
-                    currentClipSize -= 1;
+                    --currentClipSize;
                 }
 
+                weaponData.SFXChannel.RaiseEvent(weaponData.WeaponFireClip);
                 Instantiate(weaponData.BulletPrefab, bulletSpawnPos.position, transform.rotation);
                 StartCoroutine(Cooldown());
             }
@@ -134,7 +122,7 @@ public abstract class IWeapon : MonoBehaviour
         // they do not have an infinite clip size.
         if (!reloading && currentClipSize != -1)
         {
-            OnWeaponReload?.Invoke();
+            OnWeaponReload();
             StartCoroutine(ReloadWeapon());
         }
     }
@@ -146,12 +134,15 @@ public abstract class IWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(weaponData.ReloadTime);
         currentClipSize = weaponData.ClipSize;
+        OnWeaponReloadComplete();
         reloading = false;
     }
     #endregion
 
-    /// <summary>
-    /// Returns the weapon's WeaponType.
-    /// </summary>
-    /// <returns>The weapon's WeaponType.</returns>
+    #region -- Virtual Methods --
+    protected virtual void OnWeaponFire() { }
+    protected virtual void OnWeaponReload() { }
+    protected virtual void OnWeaponReloadComplete() { }
+    protected virtual void OnClipEmpty() { }
+    #endregion
 }

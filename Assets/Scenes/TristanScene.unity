@@ -265,7 +265,7 @@ Transform:
   m_Children:
   - {fileID: 1987976915}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &238707659
 PrefabInstance:
@@ -288,7 +288,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 3663159464659515382, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3663159464659515382, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: m_LocalPosition.x
@@ -353,8 +353,6 @@ MonoBehaviour:
   waypoint:
   - {fileID: 1271177897}
   - {fileID: 1040144225}
-  - {fileID: 1730940696}
-  - {fileID: 413154700}
   guardSpeed: 4
   isIdle: 0
   turnTime: 2

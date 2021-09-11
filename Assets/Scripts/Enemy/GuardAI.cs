@@ -95,7 +95,7 @@ public class GuardAI : MonoBehaviour
             sr.flipX = true;
     }
 
-    bool isFacingRight = true;
+    private bool isFacingRight = true;
 
     void IdlePhase()
     { 

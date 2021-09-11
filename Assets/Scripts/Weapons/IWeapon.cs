@@ -142,6 +142,7 @@ public abstract class IWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(weaponData.ReloadTime);
         currentClipSize = weaponData.ClipSize;
+        OnWeaponReloadComplete();
         reloading = false;
     }
     #endregion
@@ -149,6 +150,7 @@ public abstract class IWeapon : MonoBehaviour
     #region -- Virtual Methods --
     protected virtual void OnWeaponFire() { }
     protected virtual void OnWeaponReload() { }
+    protected virtual void OnWeaponReloadComplete() { }
     protected virtual void OnClipEmpty() { }
     #endregion
 }

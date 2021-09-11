@@ -31,7 +31,7 @@ public class PlasmaBullet : Bullet
     /// <param name="collision">The Collision2D the bullet collided with.</param>
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || currentBounces >= maxBounces)
+        if (currentBounces >= maxBounces)
         {
             Destroy(gameObject);
         }

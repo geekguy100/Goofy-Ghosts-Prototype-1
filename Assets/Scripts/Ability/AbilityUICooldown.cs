@@ -13,12 +13,12 @@ using System.Collections;
 public class AbilityUICooldown : MonoBehaviour
 {
     private Slider slider;
-    [SerializeField] private AbilityUsedChannelSO abilityUsedChannel;
+    [SerializeField] private FloatChannelSO abilityUsedChannel;
 
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        abilityUsedChannel.OnAbilityUsed += (float value) => { StartCoroutine(ChangeSlider(value)); };
+        abilityUsedChannel.OnEventRaised += (float value) => { StartCoroutine(ChangeSlider(value)); };
     }
 
     private IEnumerator ChangeSlider(float value)

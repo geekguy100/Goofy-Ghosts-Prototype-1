@@ -20,6 +20,9 @@ public class PlayerWeaponManager : MonoBehaviour
     /// </summary>
     private IWeapon weapon;
 
+    [Tooltip("The channel that accepts subscribers to the game paused event.")]
+    [SerializeField] private BoolChannelSO gamePausedChannel;
+
 
     /// <summary>
     /// Gets the IWeapon component.
@@ -30,7 +33,7 @@ public class PlayerWeaponManager : MonoBehaviour
         weapon = weaponParent.GetComponentInChildren<IWeapon>();
     }
 
-    #region -- Subscribing / Unsubscribing to Input events --
+    #region -- Subscribing / Unsubscribing to Events --
     /// <summary>
     /// Subscribe to all of the input events.
     /// </summary>
@@ -44,6 +47,8 @@ public class PlayerWeaponManager : MonoBehaviour
 
         controls.Player.WeaponRotate.performed += OnWeaponRotate;
         controls.Player.WeaponRotate.Enable();
+
+        gamePausedChannel.OnEventRaised += ToggleInput;
     }
 
     /// <summary>
@@ -54,6 +59,8 @@ public class PlayerWeaponManager : MonoBehaviour
         controls.Player.WeaponFire.Disable();
         controls.Player.WeaponReleaseFire.Disable();
         controls.Player.WeaponRotate.Disable();
+
+        gamePausedChannel.OnEventRaised -= ToggleInput;
     }
     #endregion
 
@@ -75,11 +82,16 @@ public class PlayerWeaponManager : MonoBehaviour
     /// <summary>
     /// Handles firing the weapon.
     /// </summary>
+    /// <param name="ctx">The input system's callback context.</param>
     private void OnWeaponFire(InputAction.CallbackContext ctx)
     {
         weapon.Fire();
     }
 
+    /// <summary>
+    /// Invoked when the player releases the weapon fire.
+    /// </summary>
+    /// <param name="ctx">The input system's callback context.</param>
     private void OnWeaponFireRelease(InputAction.CallbackContext ctx)
     {
         weapon.ReleaseFire();
@@ -91,5 +103,25 @@ public class PlayerWeaponManager : MonoBehaviour
     private void OnWeaponReload(InputAction.CallbackContext val)
     {
         weapon.Reload();
+    }
+
+    /// <summary>
+    /// Toggles player input.
+    /// </summary>
+    /// <param name="paused">True if the game is paused and input should be disabled.</param>
+    private void ToggleInput(bool paused)
+    {
+        if (paused)
+        {
+            controls.Player.WeaponFire.Disable();
+            controls.Player.WeaponReleaseFire.Disable();
+            controls.Player.WeaponRotate.Disable();
+        }
+        else
+        {
+            controls.Player.WeaponFire.Enable();
+            controls.Player.WeaponReleaseFire.Enable();
+            controls.Player.WeaponRotate.Enable();
+        }
     }
 }

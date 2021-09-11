@@ -8,7 +8,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Events/SFX Event Channel")]
+[CreateAssetMenu(menuName = "Channels/SFX Event Channel", fileName = "New SFX Event Channel")]
 public class AudioClipChannelSO : ScriptableObject
 {
     public UnityAction<AudioClipSO> OnSFXRequest;

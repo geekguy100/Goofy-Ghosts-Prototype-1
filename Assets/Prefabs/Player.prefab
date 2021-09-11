@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392278c0315367e45b11772250246401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePausedChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
 --- !u!114 &184977394758957257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponParent: {fileID: 184977393749051753}
+  gamePausedChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
 --- !u!50 &184977394758957256
 Rigidbody2D:
   serializedVersion: 4

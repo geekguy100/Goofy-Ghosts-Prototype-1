@@ -15,7 +15,7 @@ public abstract class IAbility : MonoBehaviour
     [Header("Channels")]
 
     [Tooltip("The ability used channel to broadcast to.")]
-    [SerializeField] private AbilityUsedChannelSO abilityUsedChannel;
+    [SerializeField] private FloatChannelSO abilityUsedChannel;
     [Tooltip("The channel that accepts and broadcasts requests to play SFX.")]
     [SerializeField] private AudioClipChannelSO sfxChannel;
 

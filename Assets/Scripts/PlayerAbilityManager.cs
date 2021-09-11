@@ -20,16 +20,24 @@ public class PlayerAbilityManager : MonoBehaviour
     /// </summary>
     private IAbility ability;
 
-    #region -- Subscribing and Unsubscribing to Input Events --
+    [Tooltip("The channel that accepts subscribers to the game pause event.")]
+    [SerializeField] private BoolChannelSO gamePausedChannel;
+
+
+    #region -- Subscribing and Unsubscribing to Events --
     private void OnEnable()
     {
         controls.Player.AbilityActivate.performed += OnAbilityActivate;
         controls.Player.AbilityActivate.Enable();
+
+        gamePausedChannel.OnEventRaised += ToggleInput;
     }
 
     private void OnDisable()
     {
         controls.Player.AbilityActivate.Disable();
+
+        gamePausedChannel.OnEventRaised -= ToggleInput;
     }
     #endregion
 
@@ -53,7 +61,24 @@ public class PlayerAbilityManager : MonoBehaviour
             return;
         }
 
-        print("[PlayerAbilityManager] : ability on!");
         ability.Activate();
+    }
+
+    /// <summary>
+    /// Toggles player input.
+    /// </summary>
+    /// <param name="gamePaused">True if the game is paused and input should be disabled.</param>
+    private void ToggleInput(bool gamePaused)
+    {
+        // Disables input if game is paused,
+        // Enables input if game is not paused.
+        if (gamePaused)
+        {
+            controls.Player.AbilityActivate.Disable();
+        }
+        else
+        {
+            controls.Player.AbilityActivate.Enable();
+        }
     }
 }

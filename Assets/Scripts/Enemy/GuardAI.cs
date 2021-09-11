@@ -90,9 +90,9 @@ public class GuardAI : MonoBehaviour
         // flip the guard's sprite
         if(waypoint[waypointCount].transform.position.x <=
             waypoint[nextWaypoint].transform.position.x)
-            sr.flipX = false;
-        else
             sr.flipX = true;
+        else
+            sr.flipX = false;
     }
 
     bool isFacingRight = true;

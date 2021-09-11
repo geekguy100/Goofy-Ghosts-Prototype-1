@@ -10,7 +10,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [Tooltip("The Health ScriptableObject used to initialize the entity's health.")]
-    [SerializeField] private Health healthData;
+    [SerializeField] private HealthDataSO healthData;
 
     /// <summary>
     /// The entity's current health.
@@ -29,7 +29,9 @@ public class HealthManager : MonoBehaviour
         set
         {
             currentHealth = value;
-            healthData.HealthChangeChannel.RaiseEvent(currentHealth);
+
+            HealthInfo info = new HealthInfo(healthData.MaxHealth, currentHealth);
+            healthData.HealthChangeChannel.RaiseEvent(info);
 
             // If the player's health is empty, raise the healthEmpty event.
             if (currentHealth <= 0)
@@ -66,5 +68,23 @@ public class HealthManager : MonoBehaviour
     public bool IsDead()
     {
         return currentHealth <= 0;
+    }
+}
+
+/// <summary>
+/// A struct that holds health information. Passed into the on health change event.
+/// </summary>
+public struct HealthInfo
+{
+    private float maxHealth;
+    public float MaxHealth { get { return maxHealth; } }
+
+    private float currentHealth;
+    public float CurrentHealth { get { return currentHealth; } }
+
+    public HealthInfo(float maxHealth, float currentHealth)
+    {
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
     }
 }

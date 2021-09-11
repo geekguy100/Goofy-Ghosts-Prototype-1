@@ -47,21 +47,7 @@ public abstract class IWeapon : MonoBehaviour
     /// </summary>
     private bool reloading = false;
 
-    // Actions
-    /// <summary>
-    /// Invoked when the weapon is fired.
-    /// </summary>
-    public Action OnWeaponFire;
-    /// <summary>
-    /// Invoked when the weapon's reload sequence is started.
-    /// </summary>
-    public Action OnWeaponReload;
-    /// <summary>
-    /// Invoked when the weapon is fired and the magazine is empty.
-    /// </summary>
-    public Action OnClipEmpty;
-
-    private void Awake()
+    protected virtual void Awake()
     {
         currentClipSize = weaponData.ClipSize;
     }
@@ -74,7 +60,7 @@ public abstract class IWeapon : MonoBehaviour
     {
         if (currentClipSize == 0)
         {
-            OnClipEmpty?.Invoke();
+            OnClipEmpty();
             return;
         }
 
@@ -97,7 +83,7 @@ public abstract class IWeapon : MonoBehaviour
             // Only shoot a bullet if the player can fire.
             if (canFire)
             {
-                OnWeaponFire?.Invoke();
+                OnWeaponFire();
 
                 // Decrease the weapon's clip size if
                 // the player does not have infinite ammo.
@@ -144,7 +130,7 @@ public abstract class IWeapon : MonoBehaviour
         // they do not have an infinite clip size.
         if (!reloading && currentClipSize != -1)
         {
-            OnWeaponReload?.Invoke();
+            OnWeaponReload();
             StartCoroutine(ReloadWeapon());
         }
     }
@@ -158,5 +144,11 @@ public abstract class IWeapon : MonoBehaviour
         currentClipSize = weaponData.ClipSize;
         reloading = false;
     }
+    #endregion
+
+    #region -- Virtual Methods --
+    protected virtual void OnWeaponFire() { }
+    protected virtual void OnWeaponReload() { }
+    protected virtual void OnClipEmpty() { }
     #endregion
 }

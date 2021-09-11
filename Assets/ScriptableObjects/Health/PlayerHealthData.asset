@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   broadcastOnInit: 1
-  healthChangeChannel: {fileID: 11400000, guid: 7885645c5f8f2de429836b5062c6993d, type: 2}
+  healthChangeChannel: {fileID: 11400000, guid: 1b3a50ea60d8b144197ab73175ddca3d, type: 2}
   healthEmptyChannel: {fileID: 11400000, guid: abe0ed75a3c447c469aece648bb9c29b, type: 2}

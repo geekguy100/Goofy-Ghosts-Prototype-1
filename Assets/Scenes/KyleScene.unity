@@ -1789,6 +1789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHealthChangeChannel: {fileID: 11400000, guid: 1b3a50ea60d8b144197ab73175ddca3d, type: 2}
+  lerpTime: 0.25
 --- !u!114 &1722068188
 MonoBehaviour:
   m_ObjectHideFlags: 0

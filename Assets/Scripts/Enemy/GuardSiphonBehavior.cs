@@ -13,9 +13,35 @@ public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
     [SerializeField] private HealthManager healthManager;
     [SerializeField] private float healthToSiphon;
 
+    [Tooltip("The key the guard is holding.")]
+    [SerializeField] private Key key;
+
     public void OnSiphoned()
     {
         healthManager.CurrentHealth += healthToSiphon;
-        //TODO: Remove health from guard as well, but that's not a part of our game.
+        //NOTE: Would remove health from guard as well, but that's not a part of our game.
+
+        // Drop key if Guard has one on him.
+        if (key != null)
+        {
+            DropKey();
+        }
+
+        BecomeStunned();
+    }
+
+    /// <summary>
+    /// Unparents the key from the guard, dropping it into the world.
+    /// </summary>
+    private void DropKey()
+    {
+        key.transform.SetParent(null);
+        key.OnDropped();
+        key = null;
+    }
+
+    private void BecomeStunned()
+    {
+
     }
 }

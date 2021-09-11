@@ -69,7 +69,5 @@ public class HealthUI : MonoBehaviour
             slider.value = Mathf.Lerp(initialValue, healthInfo.CurrentHealth, currentTime / lerpTime);
             yield return null;
         }
-
-        slider.value = healthInfo.CurrentHealth;
     }
 }

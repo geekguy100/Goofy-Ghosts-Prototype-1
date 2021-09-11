@@ -45,8 +45,8 @@ public class PlayerWeaponManager : MonoBehaviour
         controls.Player.WeaponReleaseFire.performed += OnWeaponFireRelease;
         controls.Player.WeaponReleaseFire.Enable();
 
-        controls.Player.WeaponRotate.performed += OnWeaponRotate;
-        controls.Player.WeaponRotate.Enable();
+        controls.Player.Rotate.performed += OnRotate;
+        controls.Player.Rotate.Enable();
 
         gamePausedChannel.OnEventRaised += ToggleInput;
     }
@@ -58,7 +58,7 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         controls.Player.WeaponFire.Disable();
         controls.Player.WeaponReleaseFire.Disable();
-        controls.Player.WeaponRotate.Disable();
+        controls.Player.Rotate.Disable();
 
         gamePausedChannel.OnEventRaised -= ToggleInput;
     }
@@ -68,7 +68,7 @@ public class PlayerWeaponManager : MonoBehaviour
     /// Rotates the weapon according to the cursor's position.
     /// </summary>
     /// <param name="value">The mouse cursor's position.</param>
-    private void OnWeaponRotate(InputAction.CallbackContext ctx)
+    private void OnRotate(InputAction.CallbackContext ctx)
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
         mousePos.z = 0;
@@ -115,13 +115,11 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             controls.Player.WeaponFire.Disable();
             controls.Player.WeaponReleaseFire.Disable();
-            controls.Player.WeaponRotate.Disable();
         }
         else
         {
             controls.Player.WeaponFire.Enable();
             controls.Player.WeaponReleaseFire.Enable();
-            controls.Player.WeaponRotate.Enable();
         }
     }
 }

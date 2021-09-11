@@ -29,6 +29,8 @@ public class PlasmaBullet : Bullet
     /// <param name="collision">The Collision2D the bullet collided with.</param>
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        sfxChannel.RaiseEvent(bounceSFX);
+
         if (currentBounces >= maxBounces)
         {
             Destroy(gameObject);
@@ -43,8 +45,6 @@ public class PlasmaBullet : Bullet
                 dir *= bulletSpeed;
                 rb.velocity = dir;
             }
-
-            sfxChannel.RaiseEvent(bounceSFX);
             ++currentBounces;
         }
     }

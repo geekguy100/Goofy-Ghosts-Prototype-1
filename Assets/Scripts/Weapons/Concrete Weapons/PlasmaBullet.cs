@@ -4,11 +4,9 @@
 // Creation Date :     09/04/2021
 //
 // Brief Description : Concrete Bullet, the PlasmaBullet, is fired out of the Plasma Gun.
-                       Is destroyed on collision with the player.
 *****************************************************************************/
 using UnityEngine;
 
-// TODO: Destroyed in a number of bounced instead of a time??
 public class PlasmaBullet : Bullet
 {
     [Tooltip("The number of times the bullet will bounce until it is destroyed.")]
@@ -37,6 +35,15 @@ public class PlasmaBullet : Bullet
         }
         else
         {
+            // If the bullet's velocity drops below our set speed,
+            // bring it back up to speed while keeping its direction the same.
+            if (rb.velocity.magnitude < bulletSpeed)
+            {
+                Vector3 dir = rb.velocity.normalized;
+                dir *= bulletSpeed;
+                rb.velocity = dir;
+            }
+
             sfxChannel.RaiseEvent(bounceSFX);
             ++currentBounces;
         }

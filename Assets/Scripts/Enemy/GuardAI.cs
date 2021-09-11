@@ -17,9 +17,18 @@ public class GuardAI : MonoBehaviour
     [SerializeField]
     float guardSpeed = 4f;
 
+    [Tooltip("Whether guard moves or not")]
+    [SerializeField]
+    bool isIdle;
+
+    [Tooltip("How long an idle guard waits to turn")]
+    [SerializeField]
+    float turnTime = 2f;
+
     int waypointCount = 0;
 
     SpriteRenderer sr;
+    Animator anim;
 
     /// <summary>
     /// Assigns the guard's initial position
@@ -30,6 +39,14 @@ public class GuardAI : MonoBehaviour
         transform.position = waypoint[waypointCount].transform.position;
 
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
+        if (isIdle)
+        {
+            //Changes direction in idle state
+            InvokeRepeating("IdlePhase", 0, turnTime);
+        }
+
     }
 
     /// <summary>
@@ -37,15 +54,18 @@ public class GuardAI : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        // Default state
-        PatrolPhase();
+        if (isIdle == false)
+        {
+            anim.SetBool("isPatrol", true);
+            PatrolPhase();
+        }
     }
 
     /// <summary>
     /// Called when the ability is activated.
     /// </summary>
     void PatrolPhase()
-    { 
+    {
         // Guard will move its position toward its next waypoint
         transform.position = Vector2.MoveTowards(transform.position,
             waypoint[waypointCount].transform.position,
@@ -73,5 +93,21 @@ public class GuardAI : MonoBehaviour
             sr.flipX = false;
         else
             sr.flipX = true;
+    }
+
+    bool isFacingRight = true;
+
+    void IdlePhase()
+    { 
+        if(isFacingRight == true)
+        {
+            sr.flipX = true;
+            isFacingRight = false;
+        }
+        else
+        {
+            sr.flipX = false;
+            isFacingRight = true;
+        }
     }
 }

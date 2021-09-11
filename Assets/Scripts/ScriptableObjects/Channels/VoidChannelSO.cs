@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Channels/Void Channel", fileName = "New Void Channel")]
-public class VoidChannelSO : MonoBehaviour
+public class VoidChannelSO : ScriptableObject
 {
     public UnityAction OnEventRaised;
 

@@ -159,9 +159,4 @@ public abstract class IWeapon : MonoBehaviour
         reloading = false;
     }
     #endregion
-
-    /// <summary>
-    /// Returns the weapon's WeaponType.
-    /// </summary>
-    /// <returns>The weapon's WeaponType.</returns>
 }

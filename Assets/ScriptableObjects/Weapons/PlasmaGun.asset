@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Plasma Gun
   bulletPrefab: {fileID: 8281945345950490795, guid: 2732f84e2a78d504aa703a9c55249ed3, type: 3}
-  fireRate: 0.05
+  fireRate: 1
   clipSize: -1
   reloadTime: 0
   weaponType: 0

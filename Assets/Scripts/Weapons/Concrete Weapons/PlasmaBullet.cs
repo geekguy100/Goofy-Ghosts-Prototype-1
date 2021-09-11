@@ -29,23 +29,35 @@ public class PlasmaBullet : Bullet
     /// <param name="collision">The Collision2D the bullet collided with.</param>
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        sfxChannel.RaiseEvent(bounceSFX);
-
-        if (currentBounces >= maxBounces)
+        // If we didn't collide with an enemy, bounce the ball.
+        if (!collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            sfxChannel.RaiseEvent(bounceSFX);
+
+            if (currentBounces >= maxBounces)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                // If the bullet's velocity drops below our set speed,
+                // bring it back up to speed while keeping its direction the same.
+                if (rb.velocity.magnitude < bulletSpeed)
+                {
+                    Vector3 dir = rb.velocity.normalized;
+                    dir *= bulletSpeed;
+                    rb.velocity = dir;
+                }
+                ++currentBounces;
+            }
         }
+        // If we collided with an Enemy, check to see if it is siphonable.
         else
         {
-            // If the bullet's velocity drops below our set speed,
-            // bring it back up to speed while keeping its direction the same.
-            if (rb.velocity.magnitude < bulletSpeed)
-            {
-                Vector3 dir = rb.velocity.normalized;
-                dir *= bulletSpeed;
-                rb.velocity = dir;
-            }
-            ++currentBounces;
+            ISiphonable siphonable = collision.gameObject.GetComponent<ISiphonable>();
+            siphonable.OnSiphoned();
+            // TODO: Play siphon sound.
+            Destroy(gameObject);
         }
     }
 }

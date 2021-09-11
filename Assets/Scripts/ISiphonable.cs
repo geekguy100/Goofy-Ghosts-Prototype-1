@@ -5,6 +5,7 @@
 //
 // Brief Description : An interface all game objects that the can have their health siphoned / leeched must implement.
 *****************************************************************************/
+using UnityEngine;
 
 public interface ISiphonable
 {

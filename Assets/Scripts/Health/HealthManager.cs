@@ -30,6 +30,11 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = value;
 
+            if (currentHealth > healthData.MaxHealth)
+            {
+                currentHealth = healthData.MaxHealth;
+            }
+
             HealthInfo info = new HealthInfo(healthData.MaxHealth, currentHealth);
             healthData.HealthChangeChannel.RaiseEvent(info);
 

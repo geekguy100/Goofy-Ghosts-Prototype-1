@@ -19,14 +19,6 @@ public abstract class IWeapon : MonoBehaviour
     [SerializeField] protected Transform bulletSpawnPos;
 
 
-    [Header("Audio Fields")]
-    [Tooltip("The channel SFX will be played on.")]
-    [SerializeField] private AudioClipChannelSO sfxChannel;
-
-    [Tooltip("The audio clip to play when the weapon is fired.")]
-    [SerializeField] private AudioClipSO shootSFX;
-
-
     /// <summary>
     /// The amount of bullets currently in the clip.
     /// </summary>
@@ -92,7 +84,7 @@ public abstract class IWeapon : MonoBehaviour
                     --currentClipSize;
                 }
 
-                sfxChannel.RaiseEvent(shootSFX);
+                weaponData.SFXChannel.RaiseEvent(weaponData.WeaponFireClip);
                 Instantiate(weaponData.BulletPrefab, bulletSpawnPos.position, transform.rotation);
                 StartCoroutine(Cooldown());
             }

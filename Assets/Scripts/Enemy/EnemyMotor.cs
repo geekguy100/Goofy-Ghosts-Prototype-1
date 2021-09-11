@@ -19,7 +19,7 @@ public class EnemyMotor : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves the enemy in the given direction.
+    /// Moves the enemy in the specified direction
     /// </summary>
     /// <param name="direction">The direction to move the enemy in.</param>
     public void Move(Vector2 direction)

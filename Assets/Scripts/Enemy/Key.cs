@@ -9,7 +9,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
-public class Key : MonoBehaviour
+public class Key : ICollectable
 {
     private Collider2D col;
 
@@ -54,5 +54,14 @@ public class Key : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    /// <summary>
+    /// Method invoked when the player enters the collectable's trigger.
+    /// </summary>
+    protected override void PerformAction()
+    {
+        collectableChannel.RaiseEvent(data);
+        Destroy(gameObject);
     }
 }

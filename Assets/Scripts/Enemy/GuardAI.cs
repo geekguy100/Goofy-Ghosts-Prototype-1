@@ -3,7 +3,7 @@
 // Author :            Kyle Grenier / Tristan Blair
 // Creation Date :     #CREATIONDATE#
 //
-// Brief Description : ADD BRIEF DESCRIPTION OF THE FILE HERE
+// Brief Description : Handles the movement AI for the guards
 *****************************************************************************/
 using UnityEngine;
 
@@ -79,18 +79,12 @@ public class GuardAI : MonoBehaviour
         if(waypointCount == waypoint.Length)
             waypointCount = 0;
 
-        int nextWaypoint = waypointCount + 1;
-
-        // Prevents the code from trying to find an index outside
-        // of the array's bounds
-        if(nextWaypoint >= waypoint.Length)
-            nextWaypoint = 0;
-
-        // If the next waypoint is to the left of the current waypoint,
-        // flip the guard's sprite
-        if(waypoint[waypointCount].transform.position.x <=
-            waypoint[nextWaypoint].transform.position.x)
+        // If the next waypoint is to the right of the guard,
+        // keep facing right
+        if(waypoint[waypointCount].transform.position.x >=
+            transform.position.x)
             sr.flipX = false;
+        // If not, face left
         else
             sr.flipX = true;
     }
@@ -98,8 +92,8 @@ public class GuardAI : MonoBehaviour
     private bool isFacingRight = true;
 
     void IdlePhase()
-    { 
-        if(isFacingRight == true)
+    {
+        if (isFacingRight == true)
         {
             sr.flipX = true;
             isFacingRight = false;
@@ -108,6 +102,6 @@ public class GuardAI : MonoBehaviour
         {
             sr.flipX = false;
             isFacingRight = true;
-        }
+        } 
     }
 }

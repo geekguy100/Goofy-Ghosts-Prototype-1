@@ -14,10 +14,17 @@ public class PhaseAbility : IAbility
     /// </summary>
     private SpriteRenderer rend;
 
+    /// <summary>
+    /// The main module of the ParticleSystem component attached to this object.
+    /// </summary>
+    private ParticleSystem.MainModule main;
+
     protected override void Awake()
     {
         base.Awake();
         rend = GetComponentInChildren<SpriteRenderer>();
+
+        main = GetComponent<ParticleSystem>().main;
     }
 
     /// <summary>
@@ -39,6 +46,10 @@ public class PhaseAbility : IAbility
         c.a /= 2;
         rend.color = c;
 
+        // Trail turns transparent
+        Color transparent = new Color(1, 1, 1, 0.05f);
+        main.startColor = transparent;
+
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), true);
     }
 
@@ -50,6 +61,10 @@ public class PhaseAbility : IAbility
         Color c = rend.color;
         c.a *= 2;
         rend.color = c;
+
+        // Trail returns to  solid color
+        Color solid = Color.white;
+        main.startColor = solid;
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), false);
     }

@@ -113,11 +113,13 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         if (paused)
         {
+            controls.Player.Rotate.Disable();
             controls.Player.WeaponFire.Disable();
             controls.Player.WeaponReleaseFire.Disable();
         }
         else
         {
+            controls.Player.Rotate.Enable();
             controls.Player.WeaponFire.Enable();
             controls.Player.WeaponReleaseFire.Enable();
         }

@@ -365,6 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneLoader: {fileID: 11400000, guid: 1e98ddf08091dc64abb2e89fe9af517d, type: 2}
   pauseGameChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
+  togglePauseChannel: {fileID: 11400000, guid: 6a816ac4123fa1a48a5392bdc3ad39be, type: 2}
+  outsidePauseControlChannel: {fileID: 11400000, guid: f8f187e7e6c9c9d4cbccc22a9df51174, type: 2}
   playerDeathChannel: {fileID: 11400000, guid: abe0ed75a3c447c469aece648bb9c29b, type: 2}
 --- !u!4 &2095070110
 Transform:

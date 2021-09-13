@@ -14,9 +14,14 @@ public class Goal : MonoBehaviour
 
     [SerializeField] private AudioClipSO enterSFX;
     [SerializeField] private AudioClipChannelSO sfxChannel;
+    [SerializeField] private bool finalGoal;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if(finalGoal)
+        {
+            PlayerPrefs.SetInt("BeatGame", 1);
+        }
         sfxChannel.RaiseEvent(enterSFX);
         sceneLoader.LoadSceneAsyncAdditive(sceneName);
     }

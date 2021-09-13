@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   playerModel: {fileID: 580210418189925909}
+  gamePausedChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
 --- !u!114 &184977394758957258
 MonoBehaviour:
   m_ObjectHideFlags: 0

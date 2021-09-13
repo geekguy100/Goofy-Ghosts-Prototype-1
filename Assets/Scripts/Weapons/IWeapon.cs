@@ -75,6 +75,12 @@ public abstract class IWeapon : MonoBehaviour
             // Only shoot a bullet if the player can fire.
             if (canFire)
             {
+                if (Physics2D.Raycast(transform.position, transform.right, 0.25f))
+                {
+                    print("HIT WALL");
+                    yield break;
+                }
+
                 OnWeaponFire();
 
                 // Decrease the weapon's clip size if

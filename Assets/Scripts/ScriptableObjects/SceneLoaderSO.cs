@@ -11,14 +11,35 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "Managers/Scene Loader", fileName = "New Scene Loader")]
 public class SceneLoaderSO : ScriptableObject
 {
+    public void LoadLastLevel()
+    {
+        if (PlayerPrefs.GetInt("BeatGame") == 1)
+        {
+            PlayerPrefs.SetInt("BeatGame", 0);
+            LoadSceneAsyncAdditive("KyleScene 1");
+            return;
+        }
+
+        Debug.Log("Trying to load " + PlayerPrefs.GetString("LastLevel"));
+        LoadSceneAsyncAdditive(PlayerPrefs.GetString("LastLevel"));
+    }
+
     public void LoadStage1()
     {
         LoadSceneAsyncAdditive("KyleScene 1");
     }
 
+    public void LoadMainMenu()
+    {
+        PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
+        LoadSceneAsyncAdditive("MainMenu");
+    }
+
     private Scene? previousScene = null;
     public void LoadSceneAsyncAdditive(string sceneName, bool unloadPrevious = true)
     {
+        //Time.timeScale = 1;
+
         if (unloadPrevious)
         {
             if (previousScene == null)
@@ -39,7 +60,6 @@ public class SceneLoaderSO : ScriptableObject
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         previousScene = SceneManager.GetActiveScene();
-        Debug.Log(previousScene.Value.name);
     }
 
     private void UnloadSceneAsync(Scene scene)

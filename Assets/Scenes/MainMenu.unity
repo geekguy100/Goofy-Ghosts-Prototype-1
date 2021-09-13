@@ -672,7 +672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 1e98ddf08091dc64abb2e89fe9af517d, type: 2}
         m_TargetAssemblyTypeName: SceneLoaderSO, Assembly-CSharp
-        m_MethodName: LoadStage1
+        m_MethodName: LoadLastLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2349,6 +2349,7 @@ GameObject:
   - component: {fileID: 960531202}
   - component: {fileID: 960531201}
   - component: {fileID: 960531200}
+  - component: {fileID: 960531204}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2444,6 +2445,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &960531204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960531199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62c2fee79f090d4296b0839c392300e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  togglePauseChannel: {fileID: 11400000, guid: f8f187e7e6c9c9d4cbccc22a9df51174, type: 2}
 --- !u!1 &1073488580
 GameObject:
   m_ObjectHideFlags: 0

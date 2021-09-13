@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3663159464659515381}
   - component: {fileID: 3663159464659515383}
   - component: {fileID: -7253731919737707973}
+  - component: {fileID: 5621604650480723835}
+  - component: {fileID: 5466280623705010513}
   m_Layer: 11
   m_Name: Guard
   m_TagString: Untagged
@@ -122,6 +124,37 @@ MonoBehaviour:
   turnTime: 2
   fovPrefab: {fileID: 6044028316988949078, guid: 7cdecdac26ea4dc45bdcf87df9e07289, type: 3}
   flashlightPos: {fileID: 2679989029808021267}
+--- !u!70 &5621604650480723835
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663159464659515380}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.95, y: 3.2}
+  m_Direction: 0
+--- !u!114 &5466280623705010513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663159464659515380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f573874e4c0c747bf92d9279d9a899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthManager: {fileID: 0}
+  healthToSiphon: 8
+  key: {fileID: 0}
 --- !u!1 &6111791224814011495
 GameObject:
   m_ObjectHideFlags: 0

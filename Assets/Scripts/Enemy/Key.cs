@@ -18,10 +18,18 @@ public class Key : ICollectable
     [Tooltip("The frequency of the key bobbing.")]
     [SerializeField] private float bobFrequency;
 
+    [SerializeField] private bool startDropped = false;
+
     private void Awake()
     {
         col = GetComponent<Collider2D>();
         col.enabled = false;
+    }
+
+    private void Start()
+    {
+        if (startDropped)
+            OnDropped();
     }
 
     /// <summary>

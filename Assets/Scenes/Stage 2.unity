@@ -553,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 5466280623705010513, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: healthManager
       value: 
-      objectReference: {fileID: 514426724}
+      objectReference: {fileID: 1063355394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
 --- !u!1 &242884962
@@ -934,17 +934,6 @@ Transform:
   m_Father: {fileID: 1982297433}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &514426724 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 156720448245450423, guid: 49ddac326cfe09246865755a40697154, type: 3}
-  m_PrefabInstance: {fileID: 1063355393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698844b2c474f984280f01f9ace7c971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 5918741713079814500, guid: 3099d635711764fa3895deb33281e06f, type: 3}
       propertyPath: healthManager
       value: 
-      objectReference: {fileID: 514426724}
+      objectReference: {fileID: 1063355394}
     - target: {fileID: 6026319772176121349, guid: 3099d635711764fa3895deb33281e06f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1733,7 +1722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d8d471c9da4fc46aa6a16dc9f211cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneLoader: {fileID: 0}
   pauseGameChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
+  playerDeathChannel: {fileID: 0}
 --- !u!4 &997258715
 Transform:
   m_ObjectHideFlags: 0
@@ -1838,7 +1829,7 @@ PrefabInstance:
     - target: {fileID: 5466280623705010513, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: healthManager
       value: 
-      objectReference: {fileID: 514426724}
+      objectReference: {fileID: 1063355394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
 --- !u!1 &1028287675
@@ -1928,6 +1919,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49ddac326cfe09246865755a40697154, type: 3}
+--- !u!114 &1063355394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7940555985800727051, guid: 49ddac326cfe09246865755a40697154, type: 3}
+  m_PrefabInstance: {fileID: 1063355393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747a7a9183604cd4ea86d12688f67d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077881918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,7 +2929,7 @@ PrefabInstance:
     - target: {fileID: 5466280623705010513, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: healthManager
       value: 
-      objectReference: {fileID: 514426724}
+      objectReference: {fileID: 1063355394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
 --- !u!1 &1611808173
@@ -13002,6 +13004,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1772873064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772873065}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Respawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772873065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772873064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.96, y: 4.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888678660
 GameObject:
   m_ObjectHideFlags: 0

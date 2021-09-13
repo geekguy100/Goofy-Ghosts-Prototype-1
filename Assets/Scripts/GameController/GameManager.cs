@@ -7,6 +7,7 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     /// True if the game is paused.
     /// </summary>
     private bool paused;
+
+    [SerializeField] private SceneLoaderSO sceneLoader;
 
     [Tooltip("Channel to broadcast the pause game event to.")]
     [SerializeField] private BoolChannelSO pauseGameChannel;
@@ -46,6 +49,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         controls = new GameManagerInput();
+    }
+
+    private void Start()
+    {
+        if (SceneManager.sceneCount == 1)
+        {
+            sceneLoader.LoadSceneAsyncAdditive("MainMenu", false);
+        }
     }
 
     /// <summary>

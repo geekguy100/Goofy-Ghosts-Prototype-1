@@ -19,8 +19,12 @@ public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
 
     [SerializeField] private float stunTime = 3f;
 
+    [SerializeField] private AudioClipSO siphonSFX;
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+
     public void OnSiphoned()
     {
+        sfxChannel.RaiseEvent(siphonSFX);
         healthManager.CurrentHealth += healthToSiphon;
         //NOTE: Would remove health from guard as well, but that's not a part of our game.
 

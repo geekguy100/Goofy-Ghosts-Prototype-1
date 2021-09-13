@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 857f3c4aad7eea943902b4cd4df90964, type: 3}
-  m_Name: PlasmaBulletAudio
+  m_Name: GuardHit
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: b12f3c088c29e2e43a0212bcb6db0e4a, type: 3}
-  mixerGroup: {fileID: -4056919572911987630, guid: ba6b396dc82256e47b40d93e9b527306, type: 2}
+  audioClip: {fileID: 8300000, guid: 304e0449f602de74fb1fac798b71282e, type: 3}
+  mixerGroup: {fileID: -7177256794631113093, guid: 0ce616d42d4daa74389e7fc98d840c1d, type: 2}
   pitch: 1
   volume: 1

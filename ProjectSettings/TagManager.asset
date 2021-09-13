@@ -19,8 +19,8 @@ TagManager:
   - Collectable
   - Enemy
   - PlayerPhase
-  - 
-  - 
+  - Locked Door
+  - Goal Flag
   - 
   - 
   - 

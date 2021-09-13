@@ -12,8 +12,12 @@ public class Goal : MonoBehaviour
     [SerializeField] private SceneLoaderSO sceneLoader;
     [SerializeField] private string sceneName;
 
+    [SerializeField] private AudioClipSO enterSFX;
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+
     private void OnTriggerEnter2D(Collider2D col)
     {
+        sfxChannel.RaiseEvent(enterSFX);
         sceneLoader.LoadSceneAsyncAdditive(sceneName);
     }
 }

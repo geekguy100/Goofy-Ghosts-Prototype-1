@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatToHit:
     serializedVersion: 2
-    m_Bits: 2432
+    m_Bits: 384
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 4160

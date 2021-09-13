@@ -50,7 +50,9 @@ public class PhaseAbility : IAbility
         Color transparent = new Color(1, 1, 1, 0.05f);
         main.startColor = transparent;
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), true);
+        gameObject.layer = LayerMask.NameToLayer("PlayerPhase");
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), true);
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
     }
 
     /// <summary>
@@ -66,7 +68,9 @@ public class PhaseAbility : IAbility
         Color solid = Color.white;
         main.startColor = solid;
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), false);
+        gameObject.layer = LayerMask.NameToLayer("Player");
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Phaseable Wall"), false);
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
     }
     #endregion
 

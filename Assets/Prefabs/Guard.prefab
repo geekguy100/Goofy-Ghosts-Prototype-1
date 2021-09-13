@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3663159464659515381}
   - component: {fileID: 3663159464659515383}
   - component: {fileID: -7253731919737707973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2679989029808021267}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlashlightPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

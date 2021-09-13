@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6068168044208759463}
   - component: {fileID: 6068168044208759457}
   - component: {fileID: 6199028109680852126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Key Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5270865514595792999}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlashlightPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 272421207442275241}
   - component: {fileID: 7465244735910173827}
   - component: {fileID: 6026319772176121349}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +5029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4044375395020639504}
   - component: {fileID: 7034780900066413809}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

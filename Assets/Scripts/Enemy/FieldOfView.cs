@@ -10,11 +10,12 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
     [SerializeField] private LayerMask whatToHit;
+    [SerializeField] private LayerMask whatIsPlayer;
     private Mesh mesh;
 
     private Vector3 origin;
     private float startingAngle;
-    private float fov;
+    [SerializeField] private float fov = 90f;
 
     [SerializeField] private float viewDistance;
 
@@ -23,7 +24,6 @@ public class FieldOfView : MonoBehaviour
         mesh = new Mesh();
         origin = Vector3.zero;
         startingAngle = 0f;
-        fov = 90f;
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
@@ -47,12 +47,18 @@ public class FieldOfView : MonoBehaviour
             Vector3 dir = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
             Vector3 vertex;
 
-            RaycastHit2D hit = Physics2D.Raycast(origin, dir, viewDistance, whatToHit);
+            RaycastHit2D hit = Physics2D.Raycast(origin, dir, viewDistance, whatToHit | whatIsPlayer);
             if (hit.collider == null)
             {
                 // If we didn't hit anything, place the vertex
                 // where it should be (max distance).
                 vertex = origin + dir * viewDistance;
+            }
+            else if (((1 << hit.transform.gameObject.layer) & whatIsPlayer) > 0)
+            {
+                // If we hit the player, call appropriate functionality.
+                print("PLAYER IN FLASHLIGHT");
+                vertex = hit.point;
             }
             else
             {

@@ -48,6 +48,9 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 384
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
   viewDistance: 5
 --- !u!23 &6044028316988949076
 MeshRenderer:

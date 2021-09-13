@@ -17,8 +17,8 @@ TagManager:
   - Background
   - Bullet
   - Collectable
-  - 
-  - 
+  - Enemy
+  - PlayerPhase
   - 
   - 
   - 

@@ -60,8 +60,6 @@ public class SceneLoaderSO : ScriptableObject
 
     private void HandlePostLoad(string sceneName, bool unloadPrevious)
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
-
         if (unloadPrevious)
         {
             if (previousScene == null)

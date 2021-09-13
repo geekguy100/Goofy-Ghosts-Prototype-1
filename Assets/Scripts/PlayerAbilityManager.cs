@@ -47,7 +47,7 @@ public class PlayerAbilityManager : MonoBehaviour
     private void Awake()
     {
         controls = new PlayerControls();
-        ability = gameObject.AddComponent<PhaseAbility>();
+        ability = GetComponent<IAbility>();
     } 
 
     /// <summary>

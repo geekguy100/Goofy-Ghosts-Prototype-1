@@ -6,6 +6,7 @@
 // Brief Description : Defines behaviour for when Guards are siphoned by the player.
 *****************************************************************************/
 using UnityEngine;
+using System.Collections;
 
 public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
 {
@@ -15,6 +16,8 @@ public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
 
     [Tooltip("The key the guard is holding.")]
     [SerializeField] private Key key;
+
+    [SerializeField] private float stunTime = 3f;
 
     public void OnSiphoned()
     {
@@ -27,7 +30,7 @@ public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
             DropKey();
         }
 
-        BecomeStunned();
+        StartCoroutine(BecomeStunned());
     }
 
     /// <summary>
@@ -40,8 +43,12 @@ public class GuardSiphonBehavior : MonoBehaviour, ISiphonable
         key = null;
     }
 
-    private void BecomeStunned()
+    private IEnumerator BecomeStunned()
     {
-
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<GuardAI>().OnStunned();
+        yield return new WaitForSeconds(stunTime);
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<GuardAI>().OnUnstunned();
     }
 }

@@ -34,6 +34,8 @@ public class GuardAI : MonoBehaviour
     private FieldOfView fov;
     [SerializeField] private Transform flashlightPos;
 
+    private bool stunned = false;
+
     /// <summary>
     /// Assigns the guard's initial position
     /// </summary>
@@ -71,17 +73,36 @@ public class GuardAI : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        if (isIdle == false)
+        if (isIdle == false && !stunned)
         {
             anim.SetBool("isPatrol", true);
             PatrolPhase();
         }
     }
 
+    public void OnStunned()
+    {
+        stunned = true;
+        anim.SetBool("stunned", true);
+        anim.SetBool("isPatrol", false);
+        fov.gameObject.SetActive(false);
+    }
+
+    public void OnUnstunned()
+    {
+        stunned = false;
+        anim.SetBool("stunned", false);
+        anim.SetBool("isPatrol", true);
+        fov.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
-        fov.SetAimDirection(Vector3.up * transform.localScale.x);
-        fov.SetOrigin(flashlightPos.position);
+        if (!stunned)
+        {
+            fov.SetAimDirection(Vector3.up * transform.localScale.x);
+            fov.SetOrigin(flashlightPos.position);
+        }
     }
 
     /// <summary>

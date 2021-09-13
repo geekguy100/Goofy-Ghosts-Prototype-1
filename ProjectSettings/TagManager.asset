@@ -42,14 +42,14 @@ TagManager:
   - name: Background
     uniqueID: 3934141645
     locked: 0
+  - name: Environment
+    uniqueID: 1310071747
+    locked: 0
   - name: Enemies
     uniqueID: 1384654959
     locked: 0
   - name: Player
     uniqueID: 3442256393
-    locked: 0
-  - name: Environment
-    uniqueID: 1310071747
     locked: 0
   - name: Bullet
     uniqueID: 415526853

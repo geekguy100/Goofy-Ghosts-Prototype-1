@@ -8,8 +8,13 @@
 
 public class PlayerHealthManager : HealthManager
 {
-    private void Awake()
+    private void OnEnable()
     {
         healthData.HealthEmptyChannel.OnEventRaised += Init;
+    }
+
+    private void OnDisable()
+    {
+        healthData.HealthEmptyChannel.OnEventRaised -= Init;
     }
 }

@@ -45,6 +45,9 @@ TagManager:
   - name: Environment
     uniqueID: 1310071747
     locked: 0
+  - name: Decor
+    uniqueID: 588487741
+    locked: 0
   - name: Enemies
     uniqueID: 1384654959
     locked: 0

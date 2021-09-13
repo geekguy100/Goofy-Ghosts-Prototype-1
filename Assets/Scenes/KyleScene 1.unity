@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 148273706}
   - component: {fileID: 148273705}
   - component: {fileID: 148273707}
+  - component: {fileID: 148273708}
   m_Layer: 14
   m_Name: Tilemap
   m_TagString: Untagged
@@ -498,6 +499,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &148273708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148273703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c7e27bda4b80d4684adf632fb2220d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneLoader: {fileID: 11400000, guid: 1e98ddf08091dc64abb2e89fe9af517d, type: 2}
+  sceneName: Stage 2
 --- !u!1 &155730716
 GameObject:
   m_ObjectHideFlags: 0

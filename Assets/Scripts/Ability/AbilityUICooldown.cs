@@ -18,7 +18,21 @@ public class AbilityUICooldown : MonoBehaviour
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        abilityUsedChannel.OnEventRaised += (float value) => { StartCoroutine(ChangeSlider(value)); };
+    }
+
+    private void OnEnable()
+    {
+        abilityUsedChannel.OnEventRaised += StartSliderChange;
+    }
+
+    private void OnDisable()
+    {
+        abilityUsedChannel.OnEventRaised -= StartSliderChange;
+    }
+
+    private void StartSliderChange(float value)
+    {
+        StartCoroutine(ChangeSlider(value));
     }
 
     private IEnumerator ChangeSlider(float value)

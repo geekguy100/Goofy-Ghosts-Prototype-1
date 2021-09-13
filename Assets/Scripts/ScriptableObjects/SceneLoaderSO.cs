@@ -54,12 +54,6 @@ public class SceneLoaderSO : ScriptableObject
     private Scene? previousScene = null;
     public void LoadSceneAsyncAdditive(string sceneName, bool unloadPrevious = true)
     {
-        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        op.completed += _ => { HandlePostLoad(sceneName, unloadPrevious); };
-    }
-
-    private void HandlePostLoad(string sceneName, bool unloadPrevious)
-    {
         if (unloadPrevious)
         {
             if (previousScene == null)
@@ -72,6 +66,12 @@ public class SceneLoaderSO : ScriptableObject
             }
         }
 
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        op.completed += _ => { HandlePostLoad(sceneName, unloadPrevious); };
+    }
+
+    private void HandlePostLoad(string sceneName, bool unloadPrevious)
+    {
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         previousScene = SceneManager.GetActiveScene();
         Debug.Log(previousScene.Value.name);

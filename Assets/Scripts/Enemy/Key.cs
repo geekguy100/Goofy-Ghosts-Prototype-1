@@ -20,6 +20,10 @@ public class Key : ICollectable
 
     [SerializeField] private bool startDropped = false;
 
+    [SerializeField] private AudioClipSO dropSFX;
+    [SerializeField] private AudioClipSO pickupSFX;
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+
     private void Awake()
     {
         col = GetComponent<Collider2D>();
@@ -37,6 +41,9 @@ public class Key : ICollectable
     /// </summary>
     public void OnDropped()
     {
+        if (!startDropped)
+            sfxChannel.RaiseEvent(dropSFX);
+
         col.enabled = true;
         StartCoroutine(BobKey());
     }
@@ -70,6 +77,7 @@ public class Key : ICollectable
     protected override void PerformAction()
     {
         collectableChannel.RaiseEvent(data);
+        sfxChannel.RaiseEvent(pickupSFX);
         Destroy(gameObject);
     }
 }

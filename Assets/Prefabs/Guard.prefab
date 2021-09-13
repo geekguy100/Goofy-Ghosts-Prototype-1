@@ -155,6 +155,9 @@ MonoBehaviour:
   healthManager: {fileID: 0}
   healthToSiphon: 8
   key: {fileID: 0}
+  stunTime: 3
+  siphonSFX: {fileID: 11400000, guid: 91d8aa00e2f569b4993fda483694c039, type: 2}
+  sfxChannel: {fileID: 11400000, guid: 50394967cd24aa14c9000d752e593802, type: 2}
 --- !u!1 &6111791224814011495
 GameObject:
   m_ObjectHideFlags: 0

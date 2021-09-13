@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297872080}
   - component: {fileID: 297872079}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,8 +797,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 588487741
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 849134209632226650, guid: d2a144f017de4457d88cdd8abddcac67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -818,12 +818,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297872078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.14, y: 5.72, z: 0}
   m_LocalScale: {x: 2.1886106, y: 2.1886106, z: 2.1886106}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 2144828493}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321827598
 GameObject:
@@ -909,7 +909,8 @@ GameObject:
   m_Component:
   - component: {fileID: 435261686}
   - component: {fileID: 435261685}
-  m_Layer: 0
+  - component: {fileID: 435261687}
+  m_Layer: 15
   m_Name: Trash Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,8 +954,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 588487741
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 5246037874320186317, guid: d2a144f017de4457d88cdd8abddcac67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -974,13 +975,39 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435261684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16.3, y: -3.44, z: 0}
   m_LocalScale: {x: 1.5149348, y: 1.5149348, z: 1.5149348}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 2144828493}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &435261687
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435261684}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &456221220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1275,8 @@ GameObject:
   m_Component:
   - component: {fileID: 588926667}
   - component: {fileID: 588926666}
-  m_Layer: 0
+  - component: {fileID: 588926668}
+  m_Layer: 15
   m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,8 +1320,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 588487741
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 2986457010498798450, guid: d2a144f017de4457d88cdd8abddcac67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1313,13 +1341,39 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588926665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15.85, y: 5.61, z: 0}
   m_LocalScale: {x: 1.6757869, y: 1.6757869, z: 1.6757869}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2144828493}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &588926668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588926665}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &590594667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2457,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1526419992}
   - component: {fileID: 1526419991}
-  m_Layer: 8
+  - component: {fileID: 1526419993}
+  m_Layer: 15
   m_Name: Vending Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2475,6 +2530,32 @@ Transform:
   m_Father: {fileID: 1891309570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1526419993
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526419990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.5}
+    newSize: {x: 1, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &1654739553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2568,7 @@ GameObject:
   - component: {fileID: 1654739556}
   - component: {fileID: 1654739555}
   - component: {fileID: 1654739557}
+  - component: {fileID: 1654739558}
   m_Layer: 13
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2638,8 +2720,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &1654739557
-TilemapCollider2D:
+--- !u!61 &1654739557
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2651,9 +2733,32 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
+  m_Offset: {x: 17.50615, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0022583, y: 2.0441883}
+  m_EdgeRadius: 0
+--- !u!114 &1654739558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654739553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b98e484e9d99264ab509396f54c60be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectableChannel: {fileID: 11400000, guid: 7495dd9640458924f912e91b7a722cdc, type: 2}
 --- !u!1 &1722068185
 GameObject:
   m_ObjectHideFlags: 0
@@ -8031,7 +8136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891309570}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Vending Machines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18871,7 +18976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144828493}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18890,6 +18995,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1891309570}
+  - {fileID: 588926667}
+  - {fileID: 297872080}
+  - {fileID: 435261686}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

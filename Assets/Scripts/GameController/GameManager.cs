@@ -20,21 +20,26 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private bool paused;
 
-    /// <summary>
-    /// Channel to broadcast the pause game event to.
-    /// </summary>
+    [Tooltip("Channel to broadcast the pause game event to.")]
     [SerializeField] private BoolChannelSO pauseGameChannel;
+
+    [Tooltip("Channel to receive calls about the player's death.")]
+    [SerializeField] private VoidChannelSO playerDeathChannel;
 
     #region -- Subscribing / Unsubscribing to Events --
     private void OnEnable()
     {
         controls.GameController.PauseGame.performed += OnPauseGame;
         controls.GameController.PauseGame.Enable();
+
+        playerDeathChannel.OnEventRaised += RespawnPlayer;
     }
 
     private void OnDisable()
     {
         controls.GameController.PauseGame.Disable();
+
+        playerDeathChannel.OnEventRaised -= RespawnPlayer;
     }
     #endregion
 
@@ -61,5 +66,10 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+
+    private void RespawnPlayer()
+    {
+        GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
     }
 }

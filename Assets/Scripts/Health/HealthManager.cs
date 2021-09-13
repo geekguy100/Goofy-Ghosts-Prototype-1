@@ -10,7 +10,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [Tooltip("The Health ScriptableObject used to initialize the entity's health.")]
-    [SerializeField] private HealthDataSO healthData;
+    [SerializeField] protected HealthDataSO healthData;
 
     /// <summary>
     /// The entity's current health.
@@ -46,7 +46,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         Init();
     }
@@ -54,7 +54,7 @@ public class HealthManager : MonoBehaviour
     /// <summary>
     /// Public method used for a manager class to initialize this Health component.
     /// </summary>
-    public void Init()
+    protected void Init()
     {
         if (healthData.BroadcastOnInit)
         {

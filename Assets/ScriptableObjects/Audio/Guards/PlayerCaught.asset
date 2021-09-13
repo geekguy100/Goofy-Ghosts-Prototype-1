@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f3c4aad7eea943902b4cd4df90964, type: 3}
+  m_Name: PlayerCaught
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 3a8aebe610c55484a854e324dcd8fec1, type: 3}
+  mixerGroup: {fileID: 6450324785783810240, guid: 0ce616d42d4daa74389e7fc98d840c1d, type: 2}
+  pitch: 1
+  volume: 0.3

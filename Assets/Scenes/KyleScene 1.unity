@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 148273704}
   - component: {fileID: 148273706}
   - component: {fileID: 148273705}
+  - component: {fileID: 148273707}
   m_Layer: 14
   m_Name: Tilemap
   m_TagString: Untagged
@@ -471,6 +472,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &148273707
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148273703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &155730716
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f573874e4c0c747bf92d9279d9a899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthManager: {fileID: 514426724}
+  healthManager: {fileID: 0}
   healthToSiphon: 8
   key: {fileID: 2027868842}
 --- !u!4 &261080295 stripped
@@ -919,17 +936,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457882594}
   m_CullTransparentMesh: 1
---- !u!114 &514426724 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 156720448245450423, guid: 49ddac326cfe09246865755a40697154, type: 3}
-  m_PrefabInstance: {fileID: 1063355393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698844b2c474f984280f01f9ace7c971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseGameChannel: {fileID: 11400000, guid: 269cf9d4f665ca5498c5389b9a1d4dfd, type: 2}
+  playerDeathChannel: {fileID: 0}
 --- !u!4 &997258715
 Transform:
   m_ObjectHideFlags: 0
@@ -2315,6 +2322,7 @@ GameObject:
   - component: {fileID: 1654739554}
   - component: {fileID: 1654739556}
   - component: {fileID: 1654739555}
+  - component: {fileID: 1654739557}
   m_Layer: 13
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2466,6 +2474,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1654739557
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654739553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1722068185
 GameObject:
   m_ObjectHideFlags: 0

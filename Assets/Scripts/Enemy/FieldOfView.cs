@@ -11,10 +11,15 @@ public class FieldOfView : MonoBehaviour
 {
     [SerializeField] private LayerMask whatToHit;
     [SerializeField] private LayerMask whatIsPlayer;
+    [SerializeField] private VoidChannelSO playerDeathChannel;
+    [SerializeField] private AudioClipChannelSO sfxChannel;
+    [SerializeField] private AudioClipSO playerCaughtClip;
+
     private Mesh mesh;
 
     private Vector3 origin;
     private float startingAngle;
+    [Header("FOV Fields")]
     [SerializeField] private float fov = 90f;
 
     [SerializeField] private float viewDistance;
@@ -56,8 +61,9 @@ public class FieldOfView : MonoBehaviour
             }
             else if (((1 << hit.transform.gameObject.layer) & whatIsPlayer) > 0)
             {
-                // If we hit the player, call appropriate functionality.
-                print("PLAYER IN FLASHLIGHT");
+                // If we hit the player, send them back to spawn.
+                sfxChannel.RaiseEvent(playerCaughtClip);
+                playerDeathChannel.RaiseEvent();
                 vertex = hit.point;
             }
             else

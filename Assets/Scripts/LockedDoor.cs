@@ -10,6 +10,9 @@ using UnityEngine;
 public class LockedDoor : MonoBehaviour
 {
     [SerializeField] private CollectableDataChannelSO collectableChannel;
+    [SerializeField] private AudioClipSO deniedSFX;
+    [SerializeField] private AudioClipSO unlockedSFX;
+    [SerializeField] private AudioClipChannelSO sfxChannel;
 
     private bool acceptPlayer;
 
@@ -25,16 +28,19 @@ public class LockedDoor : MonoBehaviour
 
     private void Unlock(CollectableData data)
     {
-        print("Door unlocked.");
         acceptPlayer = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Door has been hit");
         if (collision.gameObject.CompareTag("Player") && acceptPlayer)
         {
+            sfxChannel.RaiseEvent(unlockedSFX);
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            sfxChannel.RaiseEvent(deniedSFX);
         }
     }
 }

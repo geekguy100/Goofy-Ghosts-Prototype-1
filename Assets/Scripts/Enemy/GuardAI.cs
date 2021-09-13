@@ -30,11 +30,17 @@ public class GuardAI : MonoBehaviour
     SpriteRenderer sr;
     Animator anim;
 
+    [SerializeField] private GameObject fovPrefab;
+    private FieldOfView fov;
+    [SerializeField] private Transform flashlightPos;
+
     /// <summary>
     /// Assigns the guard's initial position
     /// </summary>
     void Start()
     {
+        CreateFOV();
+
         // Guard will automatically start at it first waypoint
         transform.position = waypoint[waypointCount].transform.position;
 
@@ -47,6 +53,17 @@ public class GuardAI : MonoBehaviour
             InvokeRepeating("IdlePhase", 0, turnTime);
         }
 
+        if (sr.flipX)
+        {
+            FlipX(true);
+            sr.flipX = false;
+        }
+
+    }
+
+    private void CreateFOV()
+    {
+        fov = Instantiate(fovPrefab, Vector3.zero, Quaternion.identity).GetComponent<FieldOfView>();
     }
 
     /// <summary>
@@ -59,6 +76,12 @@ public class GuardAI : MonoBehaviour
             anim.SetBool("isPatrol", true);
             PatrolPhase();
         }
+    }
+
+    private void Update()
+    {
+        fov.SetAimDirection(Vector3.up * transform.localScale.x);
+        fov.SetOrigin(flashlightPos.position);
     }
 
     /// <summary>
@@ -83,10 +106,10 @@ public class GuardAI : MonoBehaviour
         // keep facing right
         if(waypoint[waypointCount].transform.position.x >=
             transform.position.x)
-            sr.flipX = false;
+            FlipX(false);
         // If not, face left
         else
-            sr.flipX = true;
+            FlipX(true);
     }
 
     private bool isFacingRight = true;
@@ -95,13 +118,21 @@ public class GuardAI : MonoBehaviour
     {
         if (isFacingRight == true)
         {
-            sr.flipX = true;
+            FlipX(true);
             isFacingRight = false;
         }
         else
         {
-            sr.flipX = false;
+            FlipX(false);
             isFacingRight = true;
         } 
+    }
+
+    private void FlipX(bool flipX)
+    {
+        Vector3 scale = transform.localScale;
+        scale.x = flipX ? -1 : 1;
+
+        transform.localScale = scale;
     }
 }

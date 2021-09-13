@@ -360,6 +360,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7253731919737707973, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
+      propertyPath: fov
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7253731919737707973, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
+      propertyPath: fovPrefab
+      value: 
+      objectReference: {fileID: 6044028316988949078, guid: 7cdecdac26ea4dc45bdcf87df9e07289, type: 3}
+    - target: {fileID: -7253731919737707973, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7253731919737707973, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
+      propertyPath: flashlightPos
+      value: 
+      objectReference: {fileID: 849662491}
     - target: {fileID: 3663159464659515380, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
       propertyPath: m_Name
       value: Guard
@@ -553,6 +569,11 @@ MonoBehaviour:
   healthManager: {fileID: 514426724}
   healthToSiphon: 8
   key: {fileID: 2027868842}
+--- !u!4 &261080295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6068168044208759456, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+  m_PrefabInstance: {fileID: 734299052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321827598
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +876,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -909,6 +930,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &638037341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3663159464659515382, guid: de961a314cfcc4da5bd106c059d3ce19, type: 3}
+  m_PrefabInstance: {fileID: 238707659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &734299052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +1010,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 6199028109680852126, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: fovPrefab
+      value: 
+      objectReference: {fileID: 6044028316988949078, guid: 7cdecdac26ea4dc45bdcf87df9e07289, type: 3}
+    - target: {fileID: 6199028109680852126, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199028109680852126, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: flashlightPos
+      value: 
+      objectReference: {fileID: 1385717654}
+    - target: {fileID: 7034780900066413809, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034780900066413809, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034780900066413809, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034780900066413809, guid: 3099d635711764fa3895deb33281e06f, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.76
+      objectReference: {fileID: 0}
     - target: {fileID: 7226092497921810749, guid: 3099d635711764fa3895deb33281e06f, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1056,7 +1110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749239951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.38, y: 0.53, z: 0}
+  m_LocalPosition: {x: 5.31, y: 0.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1137,6 +1191,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768490098}
   m_CullTransparentMesh: 1
+--- !u!1 &849662490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849662491}
+  m_Layer: 0
+  m_Name: Flashlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849662491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849662490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 638037341}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &895148519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1727,54 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1283247359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283247361}
+  - component: {fileID: 1283247360}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1283247360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283247359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 35a05df156aac004b9a238f32d8bc3ec, type: 2}
+--- !u!4 &1283247361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283247359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.05565, y: -1.8242837, z: -93.552536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337291041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,8 +1807,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.27
+  m_Color: {r: 0.5235849, g: 0.93707913, b: 1, a: 1}
+  m_Intensity: 0.64
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: cd3c7eea6f28885209aa2ccdc56fc41800000000c31b164e
   m_LightCookieSprite: {fileID: 0}
@@ -1790,6 +1922,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346174436}
   m_CullTransparentMesh: 1
+--- !u!1 &1385717653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385717654}
+  m_Layer: 0
+  m_Name: Flashlight Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385717654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385717653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.78, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 261080295}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417139084
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,44 +11,9 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "Managers/Scene Loader", fileName = "New Scene Loader")]
 public class SceneLoaderSO : ScriptableObject
 {
-    public void LoadMainMenu()
-    {
-        LoadSceneAsyncAdditive("MainMenu");
-    }
-
-    public void LoadCredits()
-    {
-        LoadSceneAsyncAdditive("Credits");
-    }
-
-    public void LoadHowToPlay()
-    {
-        LoadSceneAsyncAdditive("HowToPlay");
-    }
-
-    public void LoadPauseMenu()
-    {
-        LoadSceneAsyncAdditive("PauseMenu");
-    }
-
     public void LoadStage1()
     {
         LoadSceneAsyncAdditive("KyleScene 1");
-    }
-
-    public void LoadStage2()
-    {
-        LoadSceneAsyncAdditive("Stage 2");
-    }
-
-    public void LoadStage3()
-    {
-        LoadSceneAsyncAdditive("Stage 3");
-    }
-
-    public void LoadStage4()
-    {
-        LoadSceneAsyncAdditive("Stage 4");
     }
 
     private Scene? previousScene = null;

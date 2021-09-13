@@ -92,7 +92,10 @@ public class GuardAI : MonoBehaviour
     {
         stunned = false;
         anim.SetBool("stunned", false);
-        anim.SetBool("isPatrol", true);
+        if(isIdle)
+            anim.SetBool("isPatrol", false);
+        else
+            anim.SetBool("isPatrol", true);
         fov.gameObject.SetActive(true);
     }
 
